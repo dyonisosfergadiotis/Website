@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1628">
+  <meta name="description" content="NewsFeeder is a focused RSS reader for iPhone with offline reading, search, on-device summaries and widgets.">
+  <meta property="og:title" content="NewsFeeder · Your sources. One focused feed.">
+  <meta property="og:description" content="A focused RSS reader for trusted sources, offline reading and iPhone widgets.">
+  <meta property="og:image" content="../../AppIcons/NF.png">
+  <title>NewsFeeder · Focused RSS Reader for iPhone</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="apple-touch-icon" href="../../AppIcons/NF.png">
+  <link rel="icon" type="image/png" href="../../AppIcons/NF.png">
+  <script src="newsfeeder.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="NewsFeeder home">
+      <img src="../../AppIcons/NF.png" alt="">
+      <span>NewsFeeder</span>
+    </a>
+    <nav aria-label="Page navigation">
+      <a href="#reading">Reading</a>
+      <a href="#widgets">Widgets</a>
+      <a href="#technology">Technology</a>
+    </nav>
+    <a class="back-link" href="../../index.html">Portfolio</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <div class="product-mark reveal">
+          <img src="../../AppIcons/NF.png" alt="NewsFeeder app icon">
+          <span>RSS for iPhone</span>
+        </div>
+        <p class="eyebrow reveal">Your feed, without the noise</p>
+        <h1 class="reveal">Your sources.<br><span>One focused feed.</span></h1>
+        <p class="hero-lede reveal">Follow the publications you choose, keep articles ready offline, and return to what matters without an algorithm deciding for you.</p>
+        <div class="hero-actions reveal">
+          <span class="button button-primary" aria-label="NewsFeeder is coming soon">Coming soon</span>
+          <a class="button button-secondary" href="#curate">Explore the app</a>
+        </div>
+        <ul class="hero-notes reveal" aria-label="Highlights">
+          <li>Native iOS app</li>
+          <li>Home &amp; Lock Screen widgets</li>
+          <li>Offline-ready</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="NewsFeeder feed shown on an iPhone 17 Pro Max simulator">
+        <div class="screen-shell screen-shell--hero">
+          <img src="AppViews/Feed-iPhone17ProMax.png" alt="NewsFeeder feed with articles from a selected publication">
+        </div>
+        <article class="floating-story floating-story--one">
+          <span>MacRumors</span>
+          <strong>14 Ways Apple Is Improving Messages in iOS 27</strong>
+        </article>
+        <article class="floating-story floating-story--two">
+          <span>Today</span>
+          <strong>A calmer way to keep up with every source.</strong>
+        </article>
+        <div class="signal-orbit" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="feature feature--curate" id="curate">
+      <div class="section-copy reveal">
+        <p class="eyebrow">Curate</p>
+        <h2>Build a feed around the sources you trust.</h2>
+        <p>Add RSS and Atom feeds, give them a color, and bring every publication into one chronological stream. NewsFeeder remembers what you have read without reshaping the feed around engagement.</p>
+        <div class="feature-list">
+          <span>RSS &amp; Atom</span>
+          <span>Feed colors</span>
+          <span>Unread filters</span>
+        </div>
+      </div>
+      <div class="editorial-stack reveal" aria-hidden="true">
+        <article>
+          <span class="story-source">MacRumors</span>
+          <h3>Everything new, ordered by time.</h3>
+          <p>One combined stream. No recommendation engine.</p>
+        </article>
+        <article>
+          <span class="story-source">Your sources</span>
+          <h3>Technology, design, local news or research.</h3>
+          <p>The mix is entirely yours.</p>
+        </article>
+        <article>
+          <span class="story-source">Unread</span>
+          <h3>Return exactly where you stopped.</h3>
+          <p>Reading status stays persistent across the app.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="feature feature--reader" id="reading">
+      <div class="reader-visual reveal">
+        <div class="screen-shell">
+          <img src="AppViews/Reader-iPhone17ProMax.png" alt="NewsFeeder article reader showing a MacRumors story">
+        </div>
+        <div class="reader-meter" aria-hidden="true">
+          <span>Reading progress</span>
+          <div><i></i></div>
+          <strong>6 min</strong>
+        </div>
+      </div>
+      <div class="section-copy reveal">
+        <p class="eyebrow">Read</p>
+        <h2>A reader designed to stay out of the way.</h2>
+        <p>Open an article in a dedicated reader with adjustable typography, reading time and progress. Bookmark it for later, share it, or continue on the original website.</p>
+        <dl class="compact-facts">
+          <div><dt>Typography</dt><dd>Adjustable for comfortable long-form reading</dd></div>
+          <div><dt>Bookmarks</dt><dd>Keep important stories within reach</dd></div>
+          <div><dt>Offline cache</dt><dd>Preload articles before the connection drops</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="feature feature--find" id="find">
+      <div class="section-copy reveal">
+        <p class="eyebrow">Find</p>
+        <h2>Search, filter and pick up where you left off.</h2>
+        <p>Search article titles, content and authors. Narrow the stream to unread stories, bookmarks or today's updates and switch between compact and spacious card styles.</p>
+        <div class="filter-demo" aria-label="Available feed filters">
+          <span class="is-active">All</span>
+          <span>Unread</span>
+          <span>Bookmarks</span>
+          <span>Today</span>
+        </div>
+      </div>
+      <div class="search-panel reveal">
+        <div class="search-field"><span>Search articles</span><kbd>⌘ K</kbd></div>
+        <article>
+          <span>MacRumors · 4 min</span>
+          <strong>Apple's latest platform updates, ready when you are.</strong>
+        </article>
+        <article>
+          <span>Design systems · 7 min</span>
+          <strong>Saved stories remain searchable after you leave the feed.</strong>
+        </article>
+        <article class="result-muted">
+          <span>Offline result</span>
+          <strong>Previously loaded articles stay close at hand.</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="feature feature--summary" id="understand">
+      <div class="summary-art reveal" aria-label="Conceptual illustration of an on-device article summary">
+        <div class="summary-card">
+          <div class="summary-topline"><span>On-device briefing</span><i></i></div>
+          <h3>The article in three points</h3>
+          <ul>
+            <li>Core context distilled from the current article.</li>
+            <li>Key changes surfaced for a faster first read.</li>
+            <li>The full source always remains one tap away.</li>
+          </ul>
+          <p>Availability depends on device and system support.</p>
+        </div>
+      </div>
+      <div class="section-copy reveal">
+        <p class="eyebrow">Understand</p>
+        <h2>Turn long articles into a quick on-device briefing.</h2>
+        <p>On supported devices, Apple Foundation Models can create a concise summary without sending the article to a custom AI backend. Use it as orientation, then return to the full story.</p>
+      </div>
+    </section>
+
+    <section class="widgets" id="widgets">
+      <div class="widgets-heading reveal">
+        <p class="eyebrow">Widgets</p>
+        <h2>The next article is already waiting.</h2>
+        <p>Place NewsFeeder on the iPhone Home Screen or Lock Screen and open the latest story directly. Choose the amount of context that fits your layout.</p>
+      </div>
+      <div class="widget-grid">
+        <article class="widget-card widget-card--small reveal">
+          <span>Small</span>
+          <strong>One story.<br>One tap away.</strong>
+          <i aria-hidden="true"></i>
+        </article>
+        <article class="widget-card widget-card--medium reveal">
+          <span>Medium</span>
+          <strong>Latest headlines with enough context to choose.</strong>
+          <div class="widget-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+        </article>
+        <article class="widget-card widget-card--large reveal">
+          <span>Large</span>
+          <strong>A compact front page for your selected feeds.</strong>
+          <div class="widget-list" aria-hidden="true"><i></i><i></i><i></i></div>
+        </article>
+        <article class="widget-card widget-card--lock reveal">
+          <span>Lock Screen</span>
+          <strong>Quick context before you unlock.</strong>
+          <small>Inline, circular and rectangular formats</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <div class="privacy-copy reveal">
+        <p class="eyebrow">Private by design</p>
+        <h2>Your reading flow stays useful when the connection does not.</h2>
+        <p>NewsFeeder keeps a local article cache for offline reading, builds no advertising profile and needs no custom account backend. Optional iCloud sync uses Apple's CloudKit to keep app data available across your devices.</p>
+      </div>
+      <div class="privacy-facts reveal">
+        <article><span>01</span><strong>No advertising profile</strong></article>
+        <article><span>02</span><strong>No custom account backend</strong></article>
+        <article><span>03</span><strong>Local offline cache</strong></article>
+        <article><span>04</span><strong>Optional iCloud sync</strong></article>
+      </div>
+    </section>
+
+    <section class="technology" id="technology">
+      <div class="section-copy reveal">
+        <p class="eyebrow">Technology</p>
+        <h2>Built with native Apple frameworks.</h2>
+        <p>A native SwiftUI interface with a dedicated article reader, persistent local data, deep links and widgets that share the same feed state.</p>
+      </div>
+      <ul class="tech-cloud reveal" aria-label="Technologies used">
+        <li>Swift</li>
+        <li>SwiftUI</li>
+        <li>SwiftData</li>
+        <li>CloudKit</li>
+        <li>WidgetKit</li>
+        <li>App Intents</li>
+        <li>Foundation Models</li>
+        <li>URLSession</li>
+      </ul>
+    </section>
+
+    <section class="closing">
+      <img src="../../AppIcons/NF.png" alt="" class="closing-icon reveal">
+      <p class="eyebrow reveal">NewsFeeder for iPhone</p>
+      <h2 class="reveal">A quieter place for the news you chose.</h2>
+      <span class="button button-primary reveal">Coming soon</span>
+    </section>
+  </main>
+
+  <footer>
+    <a href="../../index.html">Dyonisos Fergadiotis</a>
+    <span>NewsFeeder · iOS &amp; Widgets</span>
+    <span>&copy; <span id="year"></span></span>
+  </footer>
+</body>
+</html>

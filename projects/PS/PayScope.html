@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07140c">
+  <meta name="description" content="PayScope connects shifts, working time, breaks, tips and expected earnings in one native iOS workspace.">
+  <title>PayScope · Shift & Earnings Tracker</title>
+  <link rel="icon" href="PayScopeIcon.png">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#hero" aria-label="PayScope home">
+      <img src="PayScopeIcon.png" alt="">
+      <span>PayScope</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" aria-label="Page sections">
+      <a href="#today">Today</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#insights">Insights</a>
+      <a href="#live">Live</a>
+      <a class="back-link" href="../../index.html">Portfolio</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Native iOS workspace · 2026</p>
+        <h1>See where your shift is going.</h1>
+        <p class="hero-lead">Track time, breaks, tips and expected earnings without losing the bigger monthly picture.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#today">Explore the workflow</a>
+          <span class="status"><span></span>Coming soon</span>
+        </div>
+        <ul class="tech-list" aria-label="Technology">
+          <li>SwiftUI</li>
+          <li>SwiftData</li>
+          <li>CloudKit</li>
+          <li>ActivityKit</li>
+        </ul>
+      </div>
+
+      <div class="hero-stage reveal" aria-label="PayScope app preview">
+        <div class="ambient-orbit"></div>
+        <figure class="device device-main">
+          <img src="AppViews/Calendar.png" alt="PayScope monthly calendar in dark mode">
+        </figure>
+        <figure class="crop-card crop-month">
+          <img src="AppViews/Calendar.png" alt="PayScope month header and calendar controls">
+          <figcaption>Month overview</figcaption>
+        </figure>
+        <figure class="crop-card crop-summary">
+          <img src="AppViews/Calendar.png" alt="PayScope monthly hours and earnings summary">
+          <figcaption>Hours and expected pay</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="intro section-shell reveal">
+      <p class="eyebrow">The problem</p>
+      <div class="intro-grid">
+        <h2>A shift is more than a start and end time.</h2>
+        <div>
+          <p>Schedules, breaks, tips, time accounts and expected pay often live in separate places. That makes a simple question, “Where does this month stand?”, surprisingly hard to answer.</p>
+          <p>PayScope connects the daily detail with the monthly picture, while keeping the rules behind each calculation visible.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-section" id="today">
+      <div class="section-shell split-layout">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Today</p>
+          <h2>One glance for the shift that matters now.</h2>
+          <p>Move through an example shift to see worked time, remaining time and expected earnings update together. The values are illustrative and always remain tied to the configured rate.</p>
+          <div class="example-note">Interactive example data</div>
+        </div>
+
+        <div class="shift-console reveal">
+          <div class="console-heading">
+            <div>
+              <span class="console-label">Friday shift</span>
+              <strong id="shift-state">In progress</strong>
+            </div>
+            <span id="shift-percent">64%</span>
+          </div>
+          <progress id="shift-progress" max="100" value="64">64%</progress>
+          <div class="time-scale"><span>09:00</span><span id="current-time">14:08</span><span>17:00</span></div>
+          <label for="shift-range">Shift progress</label>
+          <input id="shift-range" type="range" min="0" max="100" value="64">
+          <div class="metric-row" aria-live="polite">
+            <div><span>Worked</span><strong id="worked-time">5h 08m</strong></div>
+            <div><span>Remaining</span><strong id="remaining-time">2h 52m</strong></div>
+            <div><span>Expected so far</span><strong id="earned-value">€74.45</strong></div>
+          </div>
+          <div class="break-row"><span>Break rule</span><strong>30 minutes applied</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calendar-story" id="calendar">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Calendar</p>
+            <h2>Every workday tells part of the month.</h2>
+          </div>
+          <p>Filter the example month to isolate workdays, absence and weekends. In the app, the same view connects daily status, tips, warnings and month totals.</p>
+        </div>
+
+        <div class="calendar-layout">
+          <div class="calendar-panel reveal">
+            <div class="filter-row" role="group" aria-label="Filter calendar days">
+              <button class="filter-button active" type="button" data-filter="all">All</button>
+              <button class="filter-button" type="button" data-filter="work">Work</button>
+              <button class="filter-button" type="button" data-filter="away">Away</button>
+              <button class="filter-button" type="button" data-filter="off">Off</button>
+            </div>
+            <div class="calendar-header"><strong>June 2026</strong><span>Example month</span></div>
+            <div class="weekday-row" aria-hidden="true"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>So</span></div>
+            <div class="calendar-grid" id="calendar-grid" aria-label="Example work calendar"></div>
+            <div class="legend">
+              <span><i class="legend-work"></i>Work</span>
+              <span><i class="legend-away"></i>Vacation / sick</span>
+              <span><i class="legend-off"></i>Off</span>
+            </div>
+          </div>
+
+          <figure class="screen-detail reveal">
+            <div class="screen-crop screen-crop-calendar">
+              <img src="AppViews/Calendar.png" alt="Detailed crop of the real PayScope calendar">
+            </div>
+            <figcaption>Captured from the current PayScope build. The tall day cells make the month readable without turning it into a dense spreadsheet.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="rules-section">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Calculations</p>
+            <h2>Rules stay visible instead of disappearing inside a total.</h2>
+          </div>
+          <p>PayScope calculates expected values from the data and settings entered by the user. It does not replace official payroll, tax advice or legally binding calculations.</p>
+        </div>
+        <div class="rule-grid">
+          <article class="rule-card reveal"><span>01</span><h3>Break validation</h3><p>Automatic and manual breaks stay inspectable, including warnings for incomplete entries.</p></article>
+          <article class="rule-card reveal"><span>02</span><h3>13-week lookback</h3><p>Vacation and sick-day values can use recorded history instead of an unexplained flat number.</p></article>
+          <article class="rule-card reveal"><span>03</span><h3>Time account</h3><p>Overtime and undertime remain connected to weekly targets and individual shifts.</p></article>
+          <article class="rule-card reveal"><span>04</span><h3>Regional holidays</h3><p>Country and region based imports add context directly to the working calendar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="insights-section" id="insights">
+      <div class="section-shell split-layout">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Statistics</p>
+          <h2>Turn individual shifts into a useful pattern.</h2>
+          <p>Switch the chart between hours and expected earnings. The full app adds monthly and yearly views, category breakdowns, time-account context and CSV export.</p>
+          <div class="segmented-control" role="group" aria-label="Chart metric">
+            <button type="button" class="active" data-chart="hours">Hours</button>
+            <button type="button" data-chart="pay">Expected pay</button>
+          </div>
+        </div>
+        <div class="chart-card reveal">
+          <div class="chart-topline"><span id="chart-title">Hours · last 7 days</span><strong id="chart-total">39.5h</strong></div>
+          <div class="bar-chart" id="bar-chart" aria-label="Weekly hours bar chart"></div>
+          <div class="chart-labels" aria-hidden="true"><span>Mo</span><span>Tu</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
+          <div class="kpi-row">
+            <div><span>Month</span><strong>163h</strong></div>
+            <div><span>Time account</span><strong>+4.5h</strong></div>
+            <div><span>Best average</span><strong>Thursday</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="live-section" id="live">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Beyond the app</p>
+            <h2>Your current shift stays visible.</h2>
+          </div>
+          <p>Live Activity, Dynamic Island, Lock Screen widgets and Control Center actions keep essential shift controls close without requiring a trip through the full app.</p>
+        </div>
+        <div class="live-grid">
+          <article class="live-card reveal">
+            <span class="live-index">01</span>
+            <h3>Live Activity</h3>
+            <p>Elapsed time and expected earnings remain visible during an active shift.</p>
+            <div class="live-preview">
+              <img src="PayScopeIcon.png" alt="">
+              <div><span>Shift in progress</span><strong id="live-timer">05:08:00</strong></div>
+              <b>€74.45</b>
+            </div>
+          </article>
+          <article class="live-card reveal">
+            <span class="live-index">02</span>
+            <h3>Control Center</h3>
+            <p>Start or end a shift, add a tip or mark a sick day through focused App Intents.</p>
+            <div class="control-preview" role="group" aria-label="Control Center action demo">
+              <button type="button" data-action="Start shift">Start shift</button>
+              <button type="button" data-action="Add tip">Add tip</button>
+              <button type="button" data-action="Mark sick">Mark sick</button>
+            </div>
+            <p class="action-feedback" id="action-feedback" aria-live="polite">Choose an example action.</p>
+          </article>
+          <article class="live-card reveal">
+            <span class="live-index">03</span>
+            <h3>Personal accents</h3>
+            <p>Alternative icons and accent colors let the utility fit the rest of the user’s setup.</p>
+            <div class="accent-picker" role="group" aria-label="Preview accent color">
+              <button type="button" class="active" data-accent="#32d868" aria-label="Green"></button>
+              <button type="button" data-accent="#6d72f6" aria-label="Indigo"></button>
+              <button type="button" data-accent="#ff8a3d" aria-label="Orange"></button>
+              <button type="button" data-accent="#ee5b9f" aria-label="Pink"></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="data-section">
+      <div class="section-shell data-layout reveal">
+        <div>
+          <p class="eyebrow">Data and privacy</p>
+          <h2>Local first, synced when available.</h2>
+        </div>
+        <div class="data-points">
+          <p><strong>On-device foundation.</strong> Shift data remains useful locally without a dedicated PayScope account.</p>
+          <p><strong>Optional iCloud sync.</strong> CloudKit connects devices through the user’s Apple account, with a local fallback.</p>
+          <p><strong>Portable records.</strong> Monthly CSV export keeps the data available for personal review.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="section-shell closing-inner reveal">
+        <img src="PayScopeIcon.png" alt="PayScope app icon">
+        <p class="eyebrow">Built natively for iPhone</p>
+        <h2>Time, earnings and context in one calm workspace.</h2>
+        <div class="hero-actions">
+          <span class="status"><span></span>Coming soon</span>
+          <a class="button button-secondary" href="../../index.html">Back to portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>PayScope · SwiftUI · iOS</span>
+    <span>Designed and built by Dyonisos Fergadiotis</span>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
