@@ -4,287 +4,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dyonisos Fergadiotis builds calm native software for real-world workflows.">
+    <meta property="og:title" content="Dyonisos Fergadiotis · Native Software Builder">
+    <meta property="og:description" content="Explore native apps, widgets, and practical software projects.">
+    <meta property="og:url" content="https://dyonisosfergadiotis.de">
     <title>Dyonisos Fergadiotis · Portfolio</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <meta property="og:title" content="Dyonisos Fergadiotis · Portfolio" />
-    <meta property="og:description" content="Explore native app projects, tools, and prototypes I'm building." />
-    <meta property="og:url" content="https://dyonisosfergadiotis.de" />
 
+    <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
-    <link rel="shortcut icon" href="icon/favicon.ico">
     <link rel="manifest" href="icon/site.webmanifest">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Sora:wght@600&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
-    <!-- --- Navigation --- -->
-    <nav class="site-nav">
-        <div class="logo">
-            <a href="#home" class="brand">Dyonisos Fergadiotis</a>
-        </div>
-        <button class="nav-toggle" aria-label="Open navigation">
-            <span></span>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="Dyonisos Fergadiotis, home">
+            <span class="brand-mark" aria-hidden="true">DF</span>
+            <span>Dyonisos Fergadiotis</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="sr-only">Toggle navigation</span>
             <span></span>
             <span></span>
         </button>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#introduction">Introduction</a>
+
+        <nav id="primary-navigation" class="nav-links" aria-label="Primary navigation">
+            <a class="active" href="#home">Home</a>
             <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
+            <a href="#about">About</a>
             <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+        </nav>
 
-    <main>
-        <!-- --- Hero Section --- -->
+        <a class="header-cta" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main-content">
         <section id="home" class="hero">
-            <div class="hero-content">
-                <p class="eyebrow">Hello, I'm</p>
-                <h1>Dyonisos Fergadiotis</h1>
-                <br>
-                <p class="hero-tags"> Computer Science Undergraduate · 2nd Level Support · Native Software Builder</p>
-            </div>
-            <div class="hero-media" aria-hidden="true">
-                <div class="hero-avatar">
-                    <span class="glow"></span>
+            <div class="hero-copy">
+                <p class="kicker"><span></span>Computer science undergraduate<br>Support professional · Native builder</p>
+                <h1>Native ideas,<br>thoughtfully built<span>.</span></h1>
+                <p class="hero-lead">I combine frontline support experience with product thinking to build calm,
+                    reliable native software for real-world needs. Every detail with purpose.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
+                    <a class="text-link" href="#about">Learn more about me <span aria-hidden="true">→</span></a>
                 </div>
+            </div>
 
-                <p class="hero-caption">I translate frontline incidents into better product decisions, so prototypes
-                    solve real gaps before launch.</p>
+            <div class="hero-visual" aria-label="Current app icons">
+                <div class="icon-stage icon-stage-news">
+                    <img src="AppIcons/NewsFeeder-current.png" alt="Current NewsFeeder app icon">
+                </div>
+                <div class="icon-stage icon-stage-pay">
+                    <img src="AppIcons/PayScope-current.png" alt="Current PayScope app icon">
+                </div>
             </div>
         </section>
 
-        <!-- --- About --- -->
-        <section id="introduction" class="about">
-            <header class="section-header">
-                <span class="section-tag">Introduction</span>
-                <h2>Hi, I'm Dyonisos</h2>
-            </header>
-            <div class="about-wrapper">
-                <div class="about-text">
-                    <p>I'm a computer science undergraduate who pairs support experience with product thinking. By
-                        sitting close to frontline requests, I keep specs grounded, documentation current, and releases
-                        predictable.</p>
-                    <p>As a working student I close tickets, surface recurring patterns, and turn them into prototypes
-                        and process tweaks. Calm, reliable tools are the goal&mdash;whether for users, agents, or developers.
-                    </p>
-                </div>
-                <aside class="about-highlights">
-                    <div class="highlight-card">
-                        <span class="highlight-title">Languages &amp; Tools</span>
-                        <ul>
-                            <li>Java · JavaScript · TypeScript</li>
-                            <li>Swift (learning) · SwiftUI basics</li>
-                            <li>HTML · CSS · Git workflows</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-card">
-                        <span class="highlight-title">Current Interests</span>
-                        <ul>
-                            <li>Smart home automation &amp; HomeKit setups</li>
-                            <li>iOS experience design</li>
-                            <li>Operational tooling for support teams</li>
-                        </ul>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <!-- --- Projects --- -->
         <section id="projects" class="projects">
-            <header class="section-header">
-                <span class="section-tag">Projects</span>
-                <h2>Curated builds for native platforms</h2>
-                <p>Highlights from university work, freelance collaborations, and personal sandboxes exploring calm
-                    software.</p>
-            </header>
-            <div class="project-grid">
-                <article class="card card--notifeeder">
-                    <img class="card-icon" src="AppIcons/NF.png" alt="NewsFeeder icon">
-                    <div class="card-meta">2026 · iOS &amp; Widgets</div>
-                    <h3>NewsFeeder</h3>
-                    <p>A focused RSS reader that keeps trusted sources searchable, offline-ready and close at hand through a flexible family of iPhone widgets.</p>
-                    <a class="card-link" href="projects/NF/NewsFeeder.html">Learn more</a>
-                </article>
-                <article class="card">
-                    <img class="card-icon" src="AppIcons/PS.png" alt="PayScope icon">
-                    <div class="card-meta">2026 · iOS App</div>
-                    <h3>PayScope</h3>
-                    <p>A native shift workspace connecting working time, breaks, tips, expected earnings and the bigger monthly picture.</p>
-                    <a class="card-link" href="/projects/PS/PayScope.html">Learn more</a>
-                </article>
-                <article class="card">
-                    <div class="card-meta">2022 · Tooling</div>
-                    <h3>Project Three</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue lacinia dui, sit amet
-                        dapibus velit.</p>
-                    <a class="card-link" href="#!">Details coming soon</a>
-                </article>
-            </div>
-        </section>
+            <div class="section-heading-row">
+                <div>
+                    <p class="section-label"><span></span>Project gallery</p>
+                    <h2>Products I’m building</h2>
+                </div>
 
-        <!-- --- Education --- -->
-        <section id="experience" class="education">
-            <div class="timeline-group">
-                <header class="timeline-header">
-                    <span class="section-tag">Education</span>
-                    <h2>Grounded Theory with Practical Follow-through</h2>
-                    <p>I pair my computer science degree with business administration electives to connect rigorous
-                        engineering habits with applied, real-world workflows.</p>
-                </header>
-                <div class="timeline">
-                    <article class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2022 &ndash; present</span>
-                            <h3>B.Sc. Computer Science · TU Dortmund</h3>
-                            <p>Focus on software engineering fundamentals, data structures and business administration
-                                as a minor subject.</p>
-                        </div>
-                    </article>
-                    <article class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2022</span>
-                            <h3>German Abitur · Phoenix-Gymnasium Dortmund-Hoerde</h3>
-                            <p>General university entrance qualification (GPA 2.1).</p>
-                        </div>
-                    </article>
+                <div class="project-filters" role="group" aria-label="Filter projects">
+                    <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-button" type="button" data-filter="ios" aria-pressed="false">iOS Apps</button>
+                    <button class="filter-button" type="button" data-filter="widgets" aria-pressed="false">Widgets</button>
+                    <button class="filter-button" type="button" data-filter="upcoming" aria-pressed="false">Upcoming</button>
                 </div>
             </div>
-        </section>
-        <section id="education" class="education">
 
-            <div class="timeline-group">
-                <header class="timeline-header">
-                    <span class="section-tag">Work Experience</span>
-                    <h2>Service-driven, Resilient, Team-minded</h2>
-                    <p>Across support, retail, and hospitality teams I stay calm, communicative, and reliable&mdash;enabling
-                        smooth handovers, fast onboarding, and satisfied teammates and customers.</p>
-                </header>
-                <div class="timeline">
-                    <article class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2025 &ndash; present</span>
-                            <h3>Working Student · KVWL Service Desk &amp; 2nd Level Support</h3>
-                            <p>Handle first-contact support requests, document incidents and collaborate with
-                                second-level
-                                specialists to keep operations stable for the KVWL.</p>
+            <div class="project-gallery">
+                <article class="project-card project-card-featured" data-categories="ios widgets">
+                    <div class="project-copy">
+                        <div class="project-title-row">
+                            <img src="AppIcons/NewsFeeder-current.png" alt="" width="72" height="72">
+                            <div>
+                                <h3>NewsFeeder</h3>
+                                <p>iOS App &amp; Widgets</p>
+                            </div>
                         </div>
-                    </article>
-                    <article class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2021 &ndash; 2025</span>
-                            <h3>Retail &amp; Hospitality Teams · REWE &amp; Aramark</h3>
-                            <p>Balanced evening and event shifts across retail and gastronomy, sharpening reliability,
-                                stress resilience and empathic customer communication while onboarding new colleagues.
-                            </p>
+                        <p>A focused RSS reader that keeps trusted sources searchable, offline-ready and close at hand
+                            through a flexible family of iPhone widgets.</p>
+                        <a class="project-link" href="projects/NF/NewsFeeder.html">View project <span aria-hidden="true">→</span></a>
+                    </div>
+                    <div class="project-media newsfeeder-media">
+                        <img class="screen screen-feed" src="projects/NF/AppViews/Feed-iPhone17ProMax.png"
+                            alt="NewsFeeder article feed">
+                        <img class="screen screen-reader" src="projects/NF/AppViews/Reader-iPhone17ProMax.png"
+                            alt="NewsFeeder reader view">
+                        <img class="screen screen-search" src="projects/NF/AppViews/View_Search.PNG"
+                            alt="NewsFeeder search view">
+                    </div>
+                </article>
+
+                <article class="project-card project-card-compact" data-categories="ios">
+                    <div class="project-copy">
+                        <div class="project-title-row">
+                            <img src="AppIcons/PayScope-current.png" alt="" width="72" height="72">
+                            <div>
+                                <h3>PayScope</h3>
+                                <p>iOS App</p>
+                            </div>
                         </div>
-                    </article>
-                </div>
+                        <p>A native shift workspace connecting working time, breaks, tips, expected earnings and the
+                            bigger monthly picture.</p>
+                        <a class="project-link project-link-green" href="projects/PS/PayScope.html">View project <span aria-hidden="true">→</span></a>
+                    </div>
+                    <div class="project-media payscope-media">
+                        <img src="projects/PS/AppViews/Calendar.png" alt="PayScope calendar view">
+                    </div>
+                </article>
+
+                <article class="project-card project-card-wide" data-categories="ios widgets upcoming">
+                    <div class="project-copy">
+                        <div class="project-title-row">
+                            <img src="AppIcons/Wetterblatt-current.png" alt="" width="72" height="72">
+                            <div>
+                                <h3>Wetterblatt</h3>
+                                <p>iOS App &amp; Widgets · Upcoming</p>
+                            </div>
+                        </div>
+                        <p>A privacy-friendly weather journal with understandable, timely forecasts that remain useful
+                            offline.</p>
+                        <span class="project-link project-link-muted">Case study coming soon</span>
+                    </div>
+                    <div class="weather-wordmark" aria-hidden="true">
+                        <img src="AppIcons/Wetterblatt-current.png" alt="">
+                        <span>Weather that stays honest about time.</span>
+                    </div>
+                </article>
+            </div>
+
+            <p class="empty-state" hidden>No projects match this filter yet.</p>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-column">
+                <p class="section-label"><span></span>About me</p>
+                <h2>Curious. Reliable.<br>Solution-oriented.</h2>
+                <p>I’m a computer science undergraduate at TU Dortmund with a passion for building native iOS
+                    experiences and operational tools that solve real problems.</p>
+                <p>Working close to support teams and users helps me turn recurring pain points into intuitive products
+                    and better processes.</p>
+                <ul class="clean-list">
+                    <li>Detail-minded builder with a calm approach</li>
+                    <li>Clear communicator and collaborative teammate</li>
+                    <li>Always learning, always shipping</li>
+                </ul>
+            </div>
+
+            <div class="about-column approach">
+                <p class="section-label"><span></span>My approach</p>
+                <h2>From insight to meaningful software.</h2>
+                <ol class="approach-list">
+                    <li><span>01</span><div><strong>Understand the real problem</strong><p>Listen closely, ask better questions, and find the actual need.</p></div></li>
+                    <li><span>02</span><div><strong>Design with clarity</strong><p>Plan flows and interactions that stay out of the way.</p></div></li>
+                    <li><span>03</span><div><strong>Build native &amp; reliable</strong><p>Craft performant, accessible experiences with attention to detail.</p></div></li>
+                    <li><span>04</span><div><strong>Iterate &amp; improve</strong><p>Learn from feedback and continuously make things better.</p></div></li>
+                </ol>
             </div>
         </section>
 
-        <!-- --- Contact --- -->
+        <section id="experience" class="experience">
+            <p class="section-label"><span></span>Experience &amp; education</p>
+            <h2>My path so far</h2>
+            <div class="timeline">
+                <article>
+                    <span class="timeline-dot"></span>
+                    <p class="timeline-year">2022 – Present</p>
+                    <h3>B.Sc. Computer Science<br>TU Dortmund</h3>
+                    <p>Software engineering fundamentals, data structures and business administration.</p>
+                </article>
+                <article>
+                    <span class="timeline-dot"></span>
+                    <p class="timeline-year">2022</p>
+                    <h3>German Abitur<br>Phoenix-Gymnasium</h3>
+                    <p>General university entrance qualification.</p>
+                </article>
+                <article>
+                    <span class="timeline-dot"></span>
+                    <p class="timeline-year">2025 – Present</p>
+                    <h3>Working Student<br>Service Desk &amp; 2nd Level</h3>
+                    <p>Handling support requests and collaborating to keep operations stable.</p>
+                </article>
+                <article>
+                    <span class="timeline-dot"></span>
+                    <p class="timeline-year">2021 – 2025</p>
+                    <h3>Retail &amp; Hospitality<br>REWE &amp; Aramark</h3>
+                    <p>Strengthened reliability, resilience and customer communication.</p>
+                </article>
+            </div>
+        </section>
+
         <section id="contact" class="contact">
-            <header class="section-header">
-                <span class="section-tag">Contact </span><span class="section-tag"></span>
-                <h2>Let's talk</h2>
-                <p>Reach out if you want to discuss native software, operational workflows, or opportunities to improve
-                    support tooling.</p>
-            </header>
-            <div class="contact-links">
-                <a class="btn" href="mailto:dyonisos@example.com">Send an email</a>
-                <a class="link-ghost" href="https://www.linkedin.com/in/dyonisosfergadiotis/" target="_blank"
-                    rel="noreferrer">LinkedIn</a>
-                <a class="link-ghost" href="https://github.com/dyonisosfergadiotis" target="_blank"
-                    rel="noreferrer">GitHub</a>
+            <div>
+                <p class="section-label"><span></span>Contact</p>
+                <h2>Let’s build something great.</h2>
+                <p>Have an idea, an opportunity, or a workflow that deserves better software?</p>
             </div>
+            <a class="button button-primary" href="https://www.linkedin.com/in/dyonisosfergadiotis/" target="_blank"
+                rel="noreferrer">Start a conversation <span aria-hidden="true">↗</span></a>
         </section>
     </main>
 
-    <!-- --- Footer --- -->
     <footer class="site-footer">
+        <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">DF</span></a>
         <p>© <span id="current-year"></span> Dyonisos Fergadiotis</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/dyonisosfergadiotis/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/dyonisosfergadiotis" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
     </footer>
 
     <script src="js/script.js" defer></script>
-
-    <!-- <script>
-        const canvas = document.createElement("canvas");
-        canvas.id = "click-spark-canvas";
-        canvas.style.position = "fixed";
-        canvas.style.top = "0";
-        canvas.style.left = "0";
-        canvas.style.pointerEvents = "none";
-        canvas.style.zIndex = "9999";
-        document.body.appendChild(canvas);
-
-        const ctx = canvas.getContext("2d");
-        const sparks = [];
-        let width = window.innerWidth;
-        let height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-
-        window.addEventListener("resize", () => {
-            width = window.innerWidth;
-            height = window.innerHeight;
-            canvas.width = width;
-            canvas.height = height;
-        });
-
-        document.addEventListener("click", (e) => {
-            const sparkCount = 8;
-            const now = performance.now();
-            for (let i = 0; i < sparkCount; i++) {
-                sparks.push({
-                    x: e.clientX,
-                    y: e.clientY,
-                    angle: (2 * Math.PI * i) / sparkCount,
-                    start: now,
-                    duration: 400,
-                });
-            }
-        });
-
-        function draw() {
-            ctx.clearRect(0, 0, width, height);
-            const now = performance.now();
-            for (let i = sparks.length - 1; i >= 0; i--) {
-                const s = sparks[i];
-                const progress = (now - s.start) / s.duration;
-                if (progress > 1) {
-                    sparks.splice(i, 1);
-                    continue;
-                }
-                const eased = progress * (2 - progress); // ease-out
-                const radius = 25 * eased;
-                const length = 10 * (1 - eased);
-                const x1 = s.x + radius * Math.cos(s.angle);
-                const y1 = s.y + radius * Math.sin(s.angle);
-                const x2 = s.x + (radius + length) * Math.cos(s.angle);
-                const y2 = s.y + (radius + length) * Math.sin(s.angle);
-
-                ctx.strokeStyle = "rgba(0, 191, 166, 0.9)"; // dein Mint-Ton
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.moveTo(x1, y1);
-                ctx.lineTo(x2, y2);
-                ctx.stroke();
-            }
-            requestAnimationFrame(draw);
-        }
-
-        draw();
-    </script> -->
 </body>
+
 </html>
