@@ -10,6 +10,7 @@
     body.appendChild(progress);
 
     const revealSelectors = [
+        '.chapter-transition',
         'main section > .section-label',
         'main section > h2',
         '.section-heading-row',
@@ -66,10 +67,10 @@
     ).forEach((element) => element.classList.add('motion-magnetic'));
 
     const parallaxItems = [
-        ['.hero-visual', 0.055],
+        ['.hero-visual:not([data-motion-static])', 0.055],
         ['.hero-stage', 0.04],
         ['.hero-scene', 0.035],
-        ['.screen-shell--hero', 0.045]
+        ['.screen-shell--hero:not([data-motion-static])', 0.045]
     ].flatMap(([selector, speed]) =>
         [...document.querySelectorAll(selector)].map((element) => ({ element, speed }))
     );

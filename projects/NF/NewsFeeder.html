@@ -9,7 +9,8 @@
   <meta property="og:description" content="A focused RSS reader for trusted sources, offline reading and iPhone widgets.">
   <meta property="og:image" content="../../AppIcons/NF.png">
   <title>NewsFeeder · Focused RSS Reader for iPhone</title>
-  <link rel="stylesheet" href="stylesheet.css?v=20260614-mobile">
+  <link rel="stylesheet" href="../app-shell.css?v=20260615">
+  <link rel="stylesheet" href="stylesheet.css?v=20260615-editorial">
   <link rel="stylesheet" href="../../css/motion.css?v=20260614">
   <link rel="apple-touch-icon" href="../../AppIcons/NF.png">
   <link rel="icon" type="image/png" href="../../AppIcons/NF.png">
@@ -19,17 +20,18 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="NewsFeeder home">
+  <header class="app-header">
+    <a class="app-brand" href="#top" aria-label="NewsFeeder home">
       <img src="../../AppIcons/NF.png" alt="">
       <span>NewsFeeder</span>
     </a>
-    <nav aria-label="Page navigation">
+    <button class="app-nav-toggle" type="button" aria-expanded="false" aria-controls="app-navigation">Menu</button>
+    <nav class="app-nav" id="app-navigation" aria-label="Page navigation">
       <a href="#reading">Reading</a>
       <a href="#widgets">Widgets</a>
       <a href="#technology">Technology</a>
     </nav>
-    <a class="back-link" href="../../index.html">Portfolio</a>
+    <a class="app-portfolio-link" href="../../index.html">Portfolio</a>
   </header>
 
   <main id="main">
@@ -54,19 +56,10 @@
         </ul>
       </div>
 
-      <div class="hero-visual reveal" aria-label="NewsFeeder feed shown on an iPhone 17 Pro Max simulator">
-        <div class="screen-shell screen-shell--hero">
+      <div class="hero-visual reveal" data-motion-static aria-label="NewsFeeder feed shown on an iPhone 17 Pro Max simulator">
+        <div class="screen-shell screen-shell--hero" data-motion-static>
           <img src="AppViews/Feed-iPhone17ProMax.png" alt="NewsFeeder feed with articles from a selected publication">
         </div>
-        <article class="floating-story floating-story--one">
-          <span>MacRumors</span>
-          <strong>14 Ways Apple Is Improving Messages in iOS 27</strong>
-        </article>
-        <article class="floating-story floating-story--two">
-          <span>Today</span>
-          <strong>A calmer way to keep up with every source.</strong>
-        </article>
-        <div class="signal-orbit" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -196,10 +189,11 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="app-footer">
     <a href="../../index.html">Dyonisos Fergadiotis</a>
-    <span>NewsFeeder · iOS &amp; Widgets</span>
-    <span>&copy; <span id="year"></span></span>
+    <span class="app-footer-product">NewsFeeder · iOS &amp; Widgets</span>
+    <span class="app-footer-copy">&copy; <span data-current-year></span></span>
   </footer>
+  <script src="../app-shell.js?v=20260615" defer></script>
 </body>
 </html>

@@ -23,16 +23,3 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
 
   revealItems.forEach((item) => observer.observe(item));
 }
-
-if (!reducedMotion) {
-  const hero = document.querySelector(".hero");
-
-  const updateStories = () => {
-    if (!hero) return;
-    const progress = Math.min(Math.max(-hero.getBoundingClientRect().top / 700, 0), 1);
-    hero.style.setProperty("--story-shift", `${progress * 42}px`);
-  };
-
-  updateStories();
-  window.addEventListener("scroll", updateStories, { passive: true });
-}

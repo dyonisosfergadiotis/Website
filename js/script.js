@@ -40,8 +40,33 @@ if (yearElement) {
     yearElement.textContent = new Date().getFullYear().toString();
 }
 
+const timelineScrollers = [...document.querySelectorAll('.timeline-scroll')];
+const showLatestTimelineEntries = () => {
+    timelineScrollers.forEach((timeline) => {
+        timeline.scrollLeft = timeline.scrollWidth - timeline.clientWidth;
+    });
+};
+
+if (timelineScrollers.length) {
+    requestAnimationFrame(showLatestTimelineEntries);
+    window.addEventListener('load', showLatestTimelineEntries, { once: true });
+    window.addEventListener('resize', showLatestTimelineEntries);
+}
+
+const hero = document.querySelector('.hero');
 const heroVisual = document.querySelector('.hero-visual');
+const weatherThemeButtons = [...document.querySelectorAll('[data-weather-theme]')];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+weatherThemeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const theme = button.dataset.weatherTheme;
+        if (!hero || !theme) return;
+
+        hero.dataset.theme = theme;
+        weatherThemeButtons.forEach((item) => item.classList.toggle('active', item === button));
+    });
+});
 
 if (heroVisual && !reducedMotion) {
     heroVisual.addEventListener('pointermove', (event) => {

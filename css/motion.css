@@ -47,6 +47,36 @@ body.motion-pointer-active .motion-cursor-glow {
     translate: 0 0;
 }
 
+.motion-ready .chapter-transition .chapter-transition-line {
+    transform: scaleX(0);
+    transition: transform 900ms var(--motion-ease);
+}
+
+.motion-ready .chapter-transition .chapter-transition-line:first-child {
+    transform-origin: right;
+}
+
+.motion-ready .chapter-transition .chapter-transition-line:last-child {
+    transform-origin: left;
+}
+
+.motion-ready .chapter-transition .chapter-transition-node {
+    opacity: 0;
+    transform: scale(.72);
+    transition:
+        opacity 500ms ease 180ms,
+        transform 700ms var(--motion-ease) 180ms;
+}
+
+.motion-ready .chapter-transition.motion-visible .chapter-transition-line {
+    transform: scaleX(1);
+}
+
+.motion-ready .chapter-transition.motion-visible .chapter-transition-node {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .motion-tilt {
     --motion-rx: 0deg;
     --motion-ry: 0deg;
@@ -136,6 +166,12 @@ body.motion-pointer-active .motion-cursor-glow {
     .motion-ready .motion-reveal {
         opacity: 1;
         translate: none;
+    }
+
+    .motion-ready .chapter-transition .chapter-transition-line,
+    .motion-ready .chapter-transition .chapter-transition-node {
+        opacity: 1;
+        transform: none;
     }
 
     .motion-tilt,
