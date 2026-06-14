@@ -10,7 +10,8 @@
     <meta property="og:url" content="https://dyonisosfergadiotis.de">
     <title>Dyonisos Fergadiotis · Portfolio</title>
 
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet.css?v=20260614">
+    <link rel="stylesheet" href="css/motion.css?v=20260614">
     <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
@@ -63,6 +64,9 @@
                 <div class="icon-stage icon-stage-pay">
                     <img src="AppIcons/PayScope-current.png" alt="Current PayScope app icon">
                 </div>
+                <div class="icon-stage icon-stage-weather">
+                    <img src="AppIcons/Wetterblatt-current.png" alt="Current Wetterblatt app icon">
+                </div>
             </div>
         </section>
 
@@ -73,12 +77,6 @@
                     <h2>Products I’m building</h2>
                 </div>
 
-                <div class="project-filters" role="group" aria-label="Filter projects">
-                    <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
-                    <button class="filter-button" type="button" data-filter="ios" aria-pressed="false">iOS Apps</button>
-                    <button class="filter-button" type="button" data-filter="widgets" aria-pressed="false">Widgets</button>
-                    <button class="filter-button" type="button" data-filter="upcoming" aria-pressed="false">Upcoming</button>
-                </div>
             </div>
 
             <div class="project-gallery">
@@ -116,7 +114,7 @@
                         </div>
                         <p>A native shift workspace connecting working time, breaks, tips, expected earnings and the
                             bigger monthly picture.</p>
-                        <a class="project-link project-link-green" href="projects/PS/PayScope.html">View project <span aria-hidden="true">→</span></a>
+                        <a class="project-link" href="projects/PS/PayScope.html">View project <span aria-hidden="true">→</span></a>
                     </div>
                     <div class="project-media payscope-media">
                         <img src="projects/PS/AppViews/Calendar.png" alt="PayScope calendar view">
@@ -134,7 +132,7 @@
                         </div>
                         <p>A privacy-friendly weather journal with understandable, timely forecasts that remain useful
                             offline.</p>
-                        <span class="project-link project-link-muted">Case study coming soon</span>
+                        <a class="project-link" href="projects/WB/Wetterblatt.html">View project <span aria-hidden="true">→</span></a>
                     </div>
                     <div class="weather-wordmark" aria-hidden="true">
                         <img src="AppIcons/Wetterblatt-current.png" alt="">
@@ -142,8 +140,6 @@
                     </div>
                 </article>
             </div>
-
-            <p class="empty-state" hidden>No projects match this filter yet.</p>
         </section>
 
         <section id="about" class="about">
@@ -176,31 +172,42 @@
         <section id="experience" class="experience">
             <p class="section-label"><span></span>Experience &amp; education</p>
             <h2>My path so far</h2>
-            <div class="timeline">
-                <article>
-                    <span class="timeline-dot"></span>
-                    <p class="timeline-year">2022 – Present</p>
-                    <h3>B.Sc. Computer Science<br>TU Dortmund</h3>
-                    <p>Software engineering fundamentals, data structures and business administration.</p>
-                </article>
-                <article>
-                    <span class="timeline-dot"></span>
-                    <p class="timeline-year">2022</p>
-                    <h3>German Abitur<br>Phoenix-Gymnasium</h3>
-                    <p>General university entrance qualification.</p>
-                </article>
-                <article>
-                    <span class="timeline-dot"></span>
-                    <p class="timeline-year">2025 – Present</p>
-                    <h3>Working Student<br>Service Desk &amp; 2nd Level</h3>
-                    <p>Handling support requests and collaborating to keep operations stable.</p>
-                </article>
-                <article>
-                    <span class="timeline-dot"></span>
-                    <p class="timeline-year">2021 – 2025</p>
-                    <h3>Retail &amp; Hospitality<br>REWE &amp; Aramark</h3>
-                    <p>Strengthened reliability, resilience and customer communication.</p>
-                </article>
+            <div class="path-groups">
+                <div class="path-group">
+                    <p class="path-group-label">Education</p>
+                    <div class="timeline">
+                        <article>
+                            <span class="timeline-dot"></span>
+                            <p class="timeline-year">2022 – Present</p>
+                            <h3>B.Sc. Computer Science<br>TU Dortmund</h3>
+                            <p>Software engineering fundamentals, data structures and business administration.</p>
+                        </article>
+                        <article>
+                            <span class="timeline-dot"></span>
+                            <p class="timeline-year">2022</p>
+                            <h3>German Abitur<br>Phoenix-Gymnasium</h3>
+                            <p>General university entrance qualification.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="path-group">
+                    <p class="path-group-label">Work</p>
+                    <div class="timeline">
+                        <article>
+                            <span class="timeline-dot"></span>
+                            <p class="timeline-year">2025 – Present</p>
+                            <h3>Working Student<br>Service Desk &amp; 2nd Level</h3>
+                            <p>Handling support requests and collaborating to keep operations stable.</p>
+                        </article>
+                        <article>
+                            <span class="timeline-dot"></span>
+                            <p class="timeline-year">2021 – 2025</p>
+                            <h3>Retail &amp; Hospitality<br>REWE &amp; Aramark</h3>
+                            <p>Strengthened reliability, resilience and customer communication.</p>
+                        </article>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -224,7 +231,8 @@
         </div>
     </footer>
 
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js?v=20260614" defer></script>
+    <script src="js/motion.js?v=20260614" defer></script>
 </body>
 
 </html>

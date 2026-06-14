@@ -9,10 +9,12 @@
   <meta property="og:description" content="A focused RSS reader for trusted sources, offline reading and iPhone widgets.">
   <meta property="og:image" content="../../AppIcons/NF.png">
   <title>NewsFeeder · Focused RSS Reader for iPhone</title>
-  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="stylesheet.css?v=20260614">
+  <link rel="stylesheet" href="../../css/motion.css?v=20260614">
   <link rel="apple-touch-icon" href="../../AppIcons/NF.png">
   <link rel="icon" type="image/png" href="../../AppIcons/NF.png">
-  <script src="newsfeeder.js" defer></script>
+  <script src="newsfeeder.js?v=20260614" defer></script>
+  <script src="../../js/motion.js?v=20260614" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -79,22 +81,10 @@
           <span>Unread filters</span>
         </div>
       </div>
-      <div class="editorial-stack reveal" aria-hidden="true">
-        <article>
-          <span class="story-source">MacRumors</span>
-          <h3>Everything new, ordered by time.</h3>
-          <p>One combined stream. No recommendation engine.</p>
-        </article>
-        <article>
-          <span class="story-source">Your sources</span>
-          <h3>Technology, design, local news or research.</h3>
-          <p>The mix is entirely yours.</p>
-        </article>
-        <article>
-          <span class="story-source">Unread</span>
-          <h3>Return exactly where you stopped.</h3>
-          <p>Reading status stays persistent across the app.</p>
-        </article>
+      <div class="app-screen reveal">
+        <div class="screen-shell">
+          <img src="AppViews/HomeView.PNG" alt="NewsFeeder home view with selected feeds and reading shortcuts" loading="lazy">
+        </div>
       </div>
     </section>
 
@@ -133,35 +123,18 @@
           <span>Today</span>
         </div>
       </div>
-      <div class="search-panel reveal">
-        <div class="search-field"><span>Search articles</span><kbd>⌘ K</kbd></div>
-        <article>
-          <span>MacRumors · 4 min</span>
-          <strong>Apple's latest platform updates, ready when you are.</strong>
-        </article>
-        <article>
-          <span>Design systems · 7 min</span>
-          <strong>Saved stories remain searchable after you leave the feed.</strong>
-        </article>
-        <article class="result-muted">
-          <span>Offline result</span>
-          <strong>Previously loaded articles stay close at hand.</strong>
-        </article>
+      <div class="app-screen reveal">
+        <div class="screen-shell">
+          <img src="AppViews/View_Search.PNG" alt="NewsFeeder search view with article results" loading="lazy">
+        </div>
       </div>
     </section>
 
     <section class="feature feature--summary" id="understand">
-      <div class="summary-art reveal" aria-label="Conceptual illustration of an on-device article summary">
-        <div class="summary-card">
-          <div class="summary-topline"><span>On-device briefing</span><i></i></div>
-          <h3>The article in three points</h3>
-          <ul>
-            <li>Core context distilled from the current article.</li>
-            <li>Key changes surfaced for a faster first read.</li>
-            <li>The full source always remains one tap away.</li>
-          </ul>
-          <p>Availability depends on device and system support.</p>
-        </div>
+      <div class="media-placeholder media-placeholder-phone reveal">
+        <span>Screenshot placeholder</span>
+        <strong>On-device article summary</strong>
+        <small>Replace with the real summary sheet on a supported device</small>
       </div>
       <div class="section-copy reveal">
         <p class="eyebrow">Understand</p>
@@ -176,27 +149,10 @@
         <h2>The next article is already waiting.</h2>
         <p>Place NewsFeeder on the iPhone Home Screen or Lock Screen and open the latest story directly. Choose the amount of context that fits your layout.</p>
       </div>
-      <div class="widget-grid">
-        <article class="widget-card widget-card--small reveal">
-          <span>Small</span>
-          <strong>One story.<br>One tap away.</strong>
-          <i aria-hidden="true"></i>
-        </article>
-        <article class="widget-card widget-card--medium reveal">
-          <span>Medium</span>
-          <strong>Latest headlines with enough context to choose.</strong>
-          <div class="widget-lines" aria-hidden="true"><i></i><i></i><i></i></div>
-        </article>
-        <article class="widget-card widget-card--large reveal">
-          <span>Large</span>
-          <strong>A compact front page for your selected feeds.</strong>
-          <div class="widget-list" aria-hidden="true"><i></i><i></i><i></i></div>
-        </article>
-        <article class="widget-card widget-card--lock reveal">
-          <span>Lock Screen</span>
-          <strong>Quick context before you unlock.</strong>
-          <small>Inline, circular and rectangular formats</small>
-        </article>
+      <div class="media-placeholder media-placeholder-wide reveal">
+        <span>Screenshot placeholder</span>
+        <strong>Home and Lock Screen widget family</strong>
+        <small>Replace with one real composite showing Small, Medium, Large and Lock Screen widgets</small>
       </div>
     </section>
 

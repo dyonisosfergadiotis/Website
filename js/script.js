@@ -35,35 +35,25 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach((section) => sectionObserver.observe(section));
 
-const filterButtons = [...document.querySelectorAll('.filter-button')];
-const projectCards = [...document.querySelectorAll('.project-card')];
-const emptyState = document.querySelector('.empty-state');
-
-filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        const filter = button.dataset.filter;
-        let visibleCount = 0;
-
-        filterButtons.forEach((item) => {
-            const isActive = item === button;
-            item.classList.toggle('active', isActive);
-            item.setAttribute('aria-pressed', String(isActive));
-        });
-
-        projectCards.forEach((card) => {
-            const categories = card.dataset.categories?.split(' ') ?? [];
-            const isVisible = filter === 'all' || categories.includes(filter);
-            card.hidden = !isVisible;
-            if (isVisible) visibleCount += 1;
-        });
-
-        if (emptyState) {
-            emptyState.hidden = visibleCount !== 0;
-        }
-    });
-});
-
 const yearElement = document.getElementById('current-year');
 if (yearElement) {
     yearElement.textContent = new Date().getFullYear().toString();
+}
+
+const heroVisual = document.querySelector('.hero-visual');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (heroVisual && !reducedMotion) {
+    heroVisual.addEventListener('pointermove', (event) => {
+        const bounds = heroVisual.getBoundingClientRect();
+        const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+        const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+        heroVisual.style.setProperty('--pointer-x', x.toFixed(3));
+        heroVisual.style.setProperty('--pointer-y', y.toFixed(3));
+    });
+
+    heroVisual.addEventListener('pointerleave', () => {
+        heroVisual.style.setProperty('--pointer-x', '0');
+        heroVisual.style.setProperty('--pointer-y', '0');
+    });
 }

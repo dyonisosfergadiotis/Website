@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07140c">
+  <meta name="theme-color" content="#050b16">
   <meta name="description" content="PayScope connects shifts, working time, breaks, tips and expected earnings in one native iOS workspace.">
   <title>PayScope · Shift & Earnings Tracker</title>
   <link rel="icon" href="PayScopeIcon.png">
-  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="stylesheet.css?v=20260614">
+  <link rel="stylesheet" href="../../css/motion.css?v=20260614">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -50,14 +51,6 @@
         <figure class="device device-main">
           <img src="AppViews/Calendar.png" alt="PayScope monthly calendar in dark mode">
         </figure>
-        <figure class="crop-card crop-month">
-          <img src="AppViews/Calendar.png" alt="PayScope month header and calendar controls">
-          <figcaption>Month overview</figcaption>
-        </figure>
-        <figure class="crop-card crop-summary">
-          <img src="AppViews/Calendar.png" alt="PayScope monthly hours and earnings summary">
-          <figcaption>Hours and expected pay</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -81,24 +74,24 @@
           <div class="example-note">Interactive example data</div>
         </div>
 
-        <div class="shift-console reveal">
+        <div class="shift-console reveal" id="shift-demo">
           <div class="console-heading">
             <div>
-              <span class="console-label">Friday shift</span>
+              <span class="console-label">Example shift · 09:00–17:00</span>
               <strong id="shift-state">In progress</strong>
             </div>
             <span id="shift-percent">64%</span>
           </div>
           <progress id="shift-progress" max="100" value="64">64%</progress>
-          <div class="time-scale"><span>09:00</span><span id="current-time">14:08</span><span>17:00</span></div>
-          <label for="shift-range">Shift progress</label>
+          <div class="time-scale"><span>09:00</span><strong id="current-time">14:07</strong><span>17:00</span></div>
+          <label for="shift-range">Move through the shift</label>
           <input id="shift-range" type="range" min="0" max="100" value="64">
-          <div class="metric-row" aria-live="polite">
-            <div><span>Worked</span><strong id="worked-time">5h 08m</strong></div>
-            <div><span>Remaining</span><strong id="remaining-time">2h 52m</strong></div>
-            <div><span>Expected so far</span><strong id="earned-value">€74.45</strong></div>
+          <div class="metric-row">
+            <div><span>Worked</span><strong id="worked-time">4h 37m</strong></div>
+            <div><span>Remaining</span><strong id="remaining-time">2h 53m</strong></div>
+            <div><span>Expected</span><strong id="earned-value">€66.94</strong></div>
           </div>
-          <div class="break-row"><span>Break rule</span><strong>30 minutes applied</strong></div>
+          <div class="break-row"><span id="break-label">Break scheduled</span><strong id="break-value">Not yet</strong></div>
         </div>
       </div>
     </section>
@@ -114,29 +107,17 @@
         </div>
 
         <div class="calendar-layout">
-          <div class="calendar-panel reveal">
-            <div class="filter-row" role="group" aria-label="Filter calendar days">
-              <button class="filter-button active" type="button" data-filter="all">All</button>
-              <button class="filter-button" type="button" data-filter="work">Work</button>
-              <button class="filter-button" type="button" data-filter="away">Away</button>
-              <button class="filter-button" type="button" data-filter="off">Off</button>
-            </div>
-            <div class="calendar-header"><strong>June 2026</strong><span>Example month</span></div>
-            <div class="weekday-row" aria-hidden="true"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>So</span></div>
-            <div class="calendar-grid" id="calendar-grid" aria-label="Example work calendar"></div>
-            <div class="legend">
-              <span><i class="legend-work"></i>Work</span>
-              <span><i class="legend-away"></i>Vacation / sick</span>
-              <span><i class="legend-off"></i>Off</span>
-            </div>
-          </div>
-
           <figure class="screen-detail reveal">
             <div class="screen-crop screen-crop-calendar">
               <img src="AppViews/Calendar.png" alt="Detailed crop of the real PayScope calendar">
             </div>
             <figcaption>Captured from the current PayScope build. The tall day cells make the month readable without turning it into a dense spreadsheet.</figcaption>
           </figure>
+          <div class="media-placeholder media-placeholder-phone reveal">
+            <span>Screenshot placeholder</span>
+            <strong>Day editor</strong>
+            <small>Replace with a real shift detail showing segments, breaks, notes and validation</small>
+          </div>
         </div>
       </div>
     </section>
@@ -171,13 +152,16 @@
           </div>
         </div>
         <div class="chart-card reveal">
-          <div class="chart-topline"><span id="chart-title">Hours · last 7 days</span><strong id="chart-total">39.5h</strong></div>
-          <div class="bar-chart" id="bar-chart" aria-label="Weekly hours bar chart"></div>
-          <div class="chart-labels" aria-hidden="true"><span>Mo</span><span>Tu</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
+          <div class="chart-topline">
+            <div><span class="console-label" id="chart-title">Hours · last 7 days</span><strong id="chart-total">39.5h</strong></div>
+            <span class="chart-live"><i></i>Live preview</span>
+          </div>
+          <div class="bar-chart" id="bar-chart" aria-label="Animated example chart"></div>
+          <div class="chart-labels" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
           <div class="kpi-row">
-            <div><span>Month</span><strong>163h</strong></div>
-            <div><span>Time account</span><strong>+4.5h</strong></div>
-            <div><span>Best average</span><strong>Thursday</strong></div>
+            <div><span>Average shift</span><strong>6h 35m</strong></div>
+            <div><span>Tips</span><strong>€84</strong></div>
+            <div><span>Time account</span><strong>+2h 10m</strong></div>
           </div>
         </div>
       </div>
@@ -197,34 +181,22 @@
             <span class="live-index">01</span>
             <h3>Live Activity</h3>
             <p>Elapsed time and expected earnings remain visible during an active shift.</p>
-            <div class="live-preview">
-              <img src="PayScopeIcon.png" alt="">
-              <div><span>Shift in progress</span><strong id="live-timer">05:08:00</strong></div>
-              <b>€74.45</b>
-            </div>
           </article>
           <article class="live-card reveal">
             <span class="live-index">02</span>
             <h3>Control Center</h3>
             <p>Start or end a shift, add a tip or mark a sick day through focused App Intents.</p>
-            <div class="control-preview" role="group" aria-label="Control Center action demo">
-              <button type="button" data-action="Start shift">Start shift</button>
-              <button type="button" data-action="Add tip">Add tip</button>
-              <button type="button" data-action="Mark sick">Mark sick</button>
-            </div>
-            <p class="action-feedback" id="action-feedback" aria-live="polite">Choose an example action.</p>
           </article>
           <article class="live-card reveal">
             <span class="live-index">03</span>
             <h3>Personal accents</h3>
             <p>Alternative icons and accent colors let the utility fit the rest of the user’s setup.</p>
-            <div class="accent-picker" role="group" aria-label="Preview accent color">
-              <button type="button" class="active" data-accent="#32d868" aria-label="Green"></button>
-              <button type="button" data-accent="#6d72f6" aria-label="Indigo"></button>
-              <button type="button" data-accent="#ff8a3d" aria-label="Orange"></button>
-              <button type="button" data-accent="#ee5b9f" aria-label="Pink"></button>
-            </div>
           </article>
+        </div>
+        <div class="media-placeholder media-placeholder-landscape reveal">
+          <span>Screenshot placeholder</span>
+          <strong>Live Activity, Dynamic Island and Control Center</strong>
+          <small>Replace with a real composite captured from iPhone and Control Center</small>
         </div>
       </div>
     </section>
@@ -261,6 +233,7 @@
     <span>Designed and built by Dyonisos Fergadiotis</span>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20260614" defer></script>
+  <script src="../../js/motion.js?v=20260614" defer></script>
 </body>
 </html>

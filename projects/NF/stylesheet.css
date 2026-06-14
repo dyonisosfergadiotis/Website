@@ -286,6 +286,7 @@ h1 span {
 
 .screen-shell--hero {
   transform: rotate(2.5deg);
+  animation: news-device-float 7.5s ease-in-out infinite;
 }
 
 .floating-story {
@@ -335,6 +336,7 @@ h1 span {
   border: 1px solid rgba(124, 196, 255, 0.1);
   border-radius: 50%;
   transform: rotate(-18deg);
+  animation: signal-orbit-spin 24s linear infinite;
 }
 
 .signal-orbit::before,
@@ -351,6 +353,15 @@ h1 span {
   left: 13%;
   width: 6px;
   aspect-ratio: 1;
+}
+
+@keyframes news-device-float {
+  0%, 100% { transform: rotate(2.5deg) translateY(0); }
+  50% { transform: rotate(1deg) translateY(-14px); }
+}
+
+@keyframes signal-orbit-spin {
+  to { transform: rotate(342deg); }
 }
 
 .signal-orbit::after {
@@ -407,6 +418,54 @@ h1 span {
   background: rgba(124, 196, 255, 0.035);
   color: #b9cce0;
   font-size: 0.84rem;
+}
+
+.app-screen {
+  width: min(100%, 430px);
+  justify-self: center;
+}
+
+.media-placeholder {
+  min-height: 360px;
+  padding: clamp(28px, 5vw, 54px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+  border: 1px dashed rgba(124, 196, 255, 0.38);
+  border-radius: 28px;
+  background: rgba(124, 196, 255, 0.035);
+}
+
+.media-placeholder span {
+  color: var(--sky);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.media-placeholder strong {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.12;
+}
+
+.media-placeholder small {
+  max-width: 48ch;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.media-placeholder-phone {
+  width: min(100%, 430px);
+  min-height: 540px;
+  justify-self: center;
+}
+
+.media-placeholder-wide {
+  min-height: 330px;
+  margin-top: 70px;
 }
 
 .editorial-stack {
@@ -513,6 +572,13 @@ h1 span {
   width: 64%;
   height: 100%;
   background: var(--sky);
+  transform-origin: left;
+  animation: reading-progress 5.5s ease-in-out infinite alternate;
+}
+
+@keyframes reading-progress {
+  from { transform: scaleX(.18); }
+  to { transform: scaleX(1); }
 }
 
 .compact-facts {
@@ -961,6 +1027,10 @@ footer a {
     --content: min(100% - 28px, 1180px);
   }
 
+  html {
+    scroll-padding-top: 72px;
+  }
+
   .site-header {
     min-height: 64px;
     padding: 10px 16px;
@@ -971,6 +1041,9 @@ footer a {
   }
 
   .back-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
     font-size: 0.8rem;
   }
 
@@ -985,7 +1058,8 @@ footer a {
   }
 
   h1 {
-    font-size: clamp(3.25rem, 17vw, 5rem);
+    font-size: clamp(2.9rem, 15vw, 4.5rem);
+    line-height: 0.96;
   }
 
   .hero-visual {
@@ -1008,7 +1082,7 @@ footer a {
   .privacy,
   .technology,
   .widgets {
-    padding: 100px 0;
+    padding: 84px 0;
   }
 
   .reader-meter {
@@ -1048,6 +1122,133 @@ footer a {
   footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 440px) {
+  :root {
+    --content: min(100% - 24px, 1180px);
+  }
+
+  .site-header {
+    gap: 12px;
+    padding-inline: 12px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand span {
+    font-size: 0.88rem;
+  }
+
+  .product-mark {
+    margin-bottom: 24px;
+  }
+
+  .hero {
+    gap: 54px;
+    padding: 54px 0 72px;
+  }
+
+  h1 {
+    font-size: clamp(2.65rem, 14vw, 3.5rem);
+  }
+
+  .hero-lede {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .hero-notes {
+    justify-content: flex-start;
+    gap: 8px 16px;
+    text-align: left;
+  }
+
+  .hero-visual {
+    width: min(88vw, 340px);
+  }
+
+  .section-copy h2,
+  .widgets-heading h2,
+  .privacy h2,
+  .closing h2 {
+    font-size: clamp(2.15rem, 11vw, 3rem);
+  }
+
+  .feature,
+  .privacy,
+  .technology,
+  .widgets {
+    gap: 48px;
+    padding: 72px 0;
+  }
+
+  .screen-shell {
+    padding: 6px;
+    border-radius: 32px;
+  }
+
+  .screen-shell img {
+    border-radius: 27px;
+  }
+
+  .reader-meter {
+    right: 8px;
+    bottom: 8%;
+    width: min(190px, 62vw);
+  }
+
+  .media-placeholder,
+  .media-placeholder-phone,
+  .media-placeholder-wide {
+    min-height: 300px;
+    margin-top: 0;
+    padding: 26px 22px;
+    border-radius: 22px;
+  }
+
+  .filter-demo {
+    width: 100%;
+  }
+
+  .filter-demo span {
+    flex: 0 0 auto;
+  }
+
+  .privacy-facts article {
+    min-height: 140px;
+  }
+
+  .tech-cloud {
+    gap: 8px;
+  }
+
+  .tech-cloud li {
+    padding: 11px 14px;
+  }
+
+  .closing {
+    min-height: 65svh;
+    padding: 80px 14px;
+  }
+
+  footer {
+    width: min(calc(100% - 24px), 1180px);
+    gap: 10px;
   }
 }
 
