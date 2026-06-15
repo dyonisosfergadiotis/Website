@@ -1297,7 +1297,7 @@ h1 {
 }
 
 .app-header {
-  border-radius: 5px;
+  border-radius: 18px;
   border-bottom-color: rgba(216, 228, 230, 0.16);
   background: rgba(16, 24, 32, 0.92);
 }

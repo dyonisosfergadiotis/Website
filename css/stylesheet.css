@@ -766,8 +766,8 @@ section {
 
 .path-groups {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(48px, 7vw, 96px);
+    grid-template-columns: 1fr;
+    gap: clamp(52px, 7vw, 76px);
 }
 
 .path-group-label {
@@ -808,30 +808,34 @@ section {
 }
 
 .timeline {
+    --timeline-gap: 36px;
     position: relative;
-    width: max-content;
+    width: 100%;
     min-width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 36px;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 1px;
-    background: #b7becb;
+    display: grid;
+    grid-auto-columns: calc((100% - (3 * var(--timeline-gap))) / 4);
+    grid-auto-flow: column;
+    gap: var(--timeline-gap);
 }
 
 .timeline article {
     position: relative;
-    width: clamp(320px, 38vw, 480px);
-    flex: 0 0 auto;
     padding-top: 36px;
-    scroll-snap-align: end;
+    scroll-snap-align: start;
+}
+
+.timeline article::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + var(--timeline-gap));
+    height: 1px;
+    content: "";
+    background: #b7becb;
+}
+
+.timeline article:last-child::before {
+    width: 100%;
 }
 
 .timeline-dot {
@@ -977,7 +981,7 @@ section {
     }
 
     .timeline {
-        gap: 28px;
+        --timeline-gap: 28px;
     }
 }
 
@@ -1165,8 +1169,8 @@ section {
         gap: 56px;
     }
 
-    .timeline article {
-        width: min(78vw, 280px);
+    .timeline {
+        grid-auto-columns: min(78vw, 280px);
     }
 
     .contact {
