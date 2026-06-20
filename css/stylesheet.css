@@ -533,6 +533,12 @@ section {
     background: var(--surface-blue);
 }
 
+.project-card-featured .project-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .project-card-compact {
     display: flex;
     min-height: 630px;
@@ -546,6 +552,20 @@ section {
     display: grid;
     grid-template-columns: 0.85fr 1.15fr;
     background: var(--surface-warm);
+}
+
+.project-card-groovie {
+    grid-column: 1 / -1;
+    min-height: 420px;
+    display: grid;
+    grid-template-columns: 0.68fr 1.32fr;
+    color: #fff6e8;
+    background: #17120e;
+}
+
+.project-card-groovie .project-copy > p,
+.project-card-groovie .project-title-row p {
+    color: #c7b69d;
 }
 
 .project-copy {
@@ -566,6 +586,10 @@ section {
     margin-bottom: 28px;
 }
 
+.project-title-row > div {
+    min-width: 0;
+}
+
 .project-title-row img {
     width: 68px;
     height: 68px;
@@ -573,9 +597,27 @@ section {
     box-shadow: 0 10px 24px rgba(33, 48, 75, 0.15);
 }
 
+.project-app-mark {
+    width: 68px;
+    height: 68px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 17px;
+    box-shadow: 0 10px 24px rgba(33, 48, 75, 0.15);
+    font-size: 1.45rem;
+    font-weight: 850;
+}
+
+.project-app-mark-groovie {
+    color: #17120e;
+    background: linear-gradient(135deg, #f0bd62, #f8dfad);
+}
+
 .project-title-row h3 {
     margin: 0;
     font-size: 1.65rem;
+    overflow-wrap: normal;
 }
 
 .project-title-row p {
@@ -598,9 +640,72 @@ section {
     color: #8a713c;
 }
 
+.project-link-groovie {
+    color: #f0bd62;
+}
+
 .project-media {
     position: relative;
     min-height: 380px;
+}
+
+.groovie-media {
+    min-height: 420px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+    gap: 18px;
+    align-items: end;
+    padding: clamp(24px, 4vw, 52px);
+}
+
+.groovie-shelf {
+    min-height: 300px;
+    display: flex;
+    align-items: end;
+    gap: 7px;
+    padding: 24px;
+    border: 1px solid rgba(255, 246, 232, 0.14);
+    border-radius: 18px;
+    background: rgba(255, 246, 232, 0.05);
+}
+
+.groovie-shelf span {
+    width: var(--w);
+    height: calc(178px + (var(--w) * 2));
+    display: block;
+    border-radius: 4px 4px 1px 1px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.13), transparent 26%),
+        var(--c);
+    box-shadow: inset 0 -12px 0 rgba(0, 0, 0, 0.18);
+}
+
+.groovie-release-card {
+    padding: 22px;
+    border: 1px solid rgba(255, 246, 232, 0.16);
+    border-radius: 18px;
+    background: rgba(255, 246, 232, 0.07);
+}
+
+.groovie-release-card span {
+    color: #c7b69d;
+    font-size: 0.74rem;
+    font-weight: 780;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.groovie-release-card strong {
+    display: block;
+    margin: 8px 0;
+    font-size: clamp(1.4rem, 2.7vw, 2.2rem);
+}
+
+.groovie-release-card p {
+    margin: 0;
+    color: #c7b69d;
+    font-size: 0.92rem;
+    line-height: 1.55;
 }
 
 .newsfeeder-media .screen {
@@ -988,6 +1093,7 @@ section {
         grid-column: auto;
     }
 
+    .project-card-groovie,
     .project-card-featured,
     .project-card-wide {
         grid-template-columns: 1fr 1fr;
@@ -1161,8 +1267,13 @@ section {
     }
 
     .project-card-featured,
+    .project-card-groovie,
     .project-card-wide {
         grid-template-columns: 1fr;
+    }
+
+    .project-card-groovie {
+        min-height: auto;
     }
 
     .project-card-featured {
@@ -1175,6 +1286,16 @@ section {
 
     .newsfeeder-media .screen {
         width: 50%;
+    }
+
+    .groovie-media {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding-top: 0;
+    }
+
+    .groovie-shelf {
+        min-height: 250px;
     }
 
     .project-card-wide {
@@ -1284,6 +1405,23 @@ section {
     .project-title-row img {
         width: 58px;
         height: 58px;
+    }
+
+    .project-app-mark {
+        width: 58px;
+        height: 58px;
+        border-radius: 15px;
+    }
+
+    .groovie-shelf {
+        min-height: 210px;
+        padding: 16px;
+        gap: 5px;
+    }
+
+    .groovie-shelf span {
+        width: max(20px, calc(var(--w) * 0.72));
+        height: calc(136px + var(--w));
     }
 
     .project-card-featured {

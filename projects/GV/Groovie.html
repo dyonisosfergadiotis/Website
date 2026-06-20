@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16120e">
+  <meta name="description" content="Groovie is a native Discogs companion for browsing, valuing and organizing a record collection.">
+  <meta property="og:title" content="Groovie · A Discogs companion for record collectors.">
+  <meta property="og:description" content="Collection context, release details, wantlist signals and market awareness for vinyl collectors.">
+  <title>Groovie · Discogs Collection App</title>
+  <link rel="stylesheet" href="../app-shell.css?v=20260615-mobile-safe-area-v2">
+  <link rel="stylesheet" href="stylesheet.css?v=20260620-groovie">
+  <link rel="stylesheet" href="../../css/motion.css?v=20260614">
+  <script src="../../js/motion.js?v=20260614" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="app-header">
+    <a class="app-brand" href="#top" aria-label="Groovie home">
+      <span class="groovie-brand-mark" aria-hidden="true">G</span>
+      <span>Groovie</span>
+    </a>
+    <button class="app-nav-toggle" type="button" aria-expanded="false" aria-controls="app-navigation">Menu</button>
+    <nav class="app-nav" id="app-navigation" aria-label="Page sections">
+      <a href="#crate">Crate</a>
+      <a href="#release">Release</a>
+      <a href="#market">Market</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+    <a class="app-portfolio-link" href="../../index.html">Portfolio</a>
+  </header>
+
+  <main id="main">
+    <section class="groovie-hero" id="top">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Discogs collection companion</p>
+        <h1>Record collecting with the context still attached.</h1>
+        <p class="hero-lead">Groovie turns Discogs data into a calmer place for browsing shelves, checking pressings and keeping wants, notes and values close together.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#crate">Explore the crate</a>
+          <span class="status"><span></span>In development</span>
+        </div>
+      </div>
+
+      <div class="crate-stage reveal" aria-label="Groovie collection preview">
+        <div class="record-index" aria-hidden="true">
+          <span>Jazz</span><span>Funk</span><span>Soul</span><span>House</span><span>Rock</span>
+        </div>
+        <div class="record-wall" aria-hidden="true">
+          <article class="sleeve sleeve-one"><span>Blue Note</span><strong>1965</strong></article>
+          <article class="sleeve sleeve-two"><span>Detroit</span><strong>12"</strong></article>
+          <article class="sleeve sleeve-three"><span>Reissue</span><strong>NM</strong></article>
+          <article class="sleeve sleeve-four"><span>Import</span><strong>VG+</strong></article>
+          <article class="sleeve sleeve-five"><span>Want</span><strong>1/250</strong></article>
+          <article class="sleeve sleeve-six"><span>Local</span><strong>LP</strong></article>
+        </div>
+        <div class="needle-panel">
+          <span>Collection pulse</span>
+          <strong>438 releases</strong>
+          <p>32 missing from wantlist · 18 recently repriced · 7 duplicate pressings</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="crate-section" id="crate">
+      <div class="section-shell split-layout">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Collection crate</p>
+          <h2>Browse like a shelf, filter like a database.</h2>
+          <p>Groovie keeps collection browsing tactile while preserving the detail that makes Discogs useful: formats, labels, country, condition, custom notes and folder context.</p>
+        </div>
+        <div class="crate-console reveal">
+          <div class="console-top">
+            <span>Sorted by recently added</span>
+            <strong>Vinyl · 12" · Germany</strong>
+          </div>
+          <div class="spine-list" aria-label="Example record spines">
+            <span style="--c: #ba5a31;">Herbie Hancock · Secrets</span>
+            <span style="--c: #1d6c64;">Kraftwerk · Computerwelt</span>
+            <span style="--c: #f0bd62;">Sade · Promise</span>
+            <span style="--c: #653f58;">Theo Parrish · Sketches</span>
+            <span style="--c: #20334d;">Khruangbin · Mordechai</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="release-section" id="release">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Release dossier</p>
+            <h2>One place for the pressing, not only the album.</h2>
+          </div>
+          <p>Collectors need exact versions. Groovie separates artist and album from the specific release, then keeps barcode, label, matrix notes, media condition and personal notes visible.</p>
+        </div>
+        <div class="release-grid">
+          <article class="release-card reveal">
+            <span>Catalog</span>
+            <strong>ST-11710</strong>
+            <p>Label, country, year and format remain grouped around the release version.</p>
+          </article>
+          <article class="release-card reveal">
+            <span>Condition</span>
+            <strong>VG+ / NM</strong>
+            <p>Media and sleeve grades stay attached to personal notes and purchase context.</p>
+          </article>
+          <article class="release-card reveal">
+            <span>Folders</span>
+            <strong>Listening Queue</strong>
+            <p>Organize the collection by intent, not just by artist alphabet.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="market-section" id="market">
+      <div class="section-shell market-layout">
+        <div class="market-board reveal" aria-label="Example market signals">
+          <div><span>Median</span><strong>€42</strong></div>
+          <div><span>Low</span><strong>€18</strong></div>
+          <div><span>High</span><strong>€91</strong></div>
+          <div><span>For sale</span><strong>12</strong></div>
+        </div>
+        <div class="section-copy reveal">
+          <p class="eyebrow">Market awareness</p>
+          <h2>Know when a record changed without turning the app into a shop.</h2>
+          <p>Wantlist and value changes are treated as collection context. Groovie can surface price movement, available copies and missing releases without burying the user in marketplace noise.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy-section" id="privacy">
+      <div class="section-shell privacy-layout reveal">
+        <div>
+          <p class="eyebrow">Data model</p>
+          <h2>Discogs-powered, collector-owned.</h2>
+        </div>
+        <div class="privacy-copy">
+          <p><strong>Discogs metadata.</strong> Groovie is built around the release information collectors already maintain in Discogs.</p>
+          <p><strong>Personal layer.</strong> Notes, folders, condition and listening intent are treated as the user’s collection layer.</p>
+          <p><strong>Native workflow.</strong> The interface is designed for fast checks in record stores and slower collection review at home.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="section-shell closing-inner reveal">
+        <span class="groovie-brand-mark closing-mark" aria-hidden="true">G</span>
+        <p class="eyebrow">Groovie for iPhone</p>
+        <h2>A collection view that respects the record details.</h2>
+        <a class="button button-secondary" href="../../index.html">Back to portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <a href="../../index.html">Dyonisos Fergadiotis</a>
+    <span class="app-footer-product">Groovie · Discogs App</span>
+    <span class="app-footer-copy">&copy; <span data-current-year></span></span>
+  </footer>
+  <script src="../app-shell.js?v=20260615-scroll-reveal" defer></script>
+</body>
+</html>
