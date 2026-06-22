@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#16120e">
-  <meta name="description" content="Groovie is a native Discogs app for logging in, scanning releases, searching the database and organizing a record collection.">
-  <meta property="og:title" content="Groovie · Discogs collection, scanner and release library.">
-  <meta property="og:description" content="A native Discogs workflow for login, barcode search, collection browsing, exact release details and wantlist context.">
-  <title>Groovie · Discogs Collection App</title>
+  <meta name="theme-color" content="#060606">
+  <meta name="description" content="Groovie is a native Discogs-powered music library with liquid glass panels, album gradients, barcode scan and offline release cache.">
+  <meta property="og:title" content="Groovie · Liquid glass music library.">
+  <meta property="og:description" content="Album-led collection browsing, barcode search, tracklists, marketplace context and offline cache in a native iPhone app.">
+  <meta property="og:image" content="../../AppIcons/Groovie-current.png">
+  <title>Groovie · Liquid Glass Music Library</title>
   <link rel="stylesheet" href="../app-shell.css?v=20260615-mobile-safe-area-v2">
-  <link rel="stylesheet" href="stylesheet.css?v=20260620-groovie">
+  <link rel="stylesheet" href="stylesheet.css?v=20260622-liquid-glass">
   <link rel="stylesheet" href="../../css/motion.css?v=20260614">
+  <link rel="apple-touch-icon" href="../../AppIcons/Groovie-current.png">
+  <link rel="icon" type="image/png" href="../../AppIcons/Groovie-current.png">
   <script src="../../js/motion.js?v=20260614" defer></script>
 </head>
 <body>
@@ -18,174 +21,159 @@
 
   <header class="app-header">
     <a class="app-brand" href="#top" aria-label="Groovie home">
-      <span class="groovie-brand-mark" aria-hidden="true">G</span>
+      <span class="groovie-icon"><img src="../../AppIcons/Groovie-current.png" alt=""></span>
       <span>Groovie</span>
     </a>
     <button class="app-nav-toggle" type="button" aria-expanded="false" aria-controls="app-navigation">Menu</button>
     <nav class="app-nav" id="app-navigation" aria-label="Page sections">
-      <a href="#flow">Flow</a>
-      <a href="#release">Release</a>
-      <a href="#market">Market</a>
-      <a href="#data">Data</a>
+      <a href="#library">Library</a>
+      <a href="#detail">Album</a>
+      <a href="#scanner">Scanner</a>
+      <a href="#cache">Cache</a>
     </nav>
     <a class="app-portfolio-link" href="../../index.html">Portfolio</a>
   </header>
 
   <main id="main">
-    <section class="groovie-hero" id="top">
+    <section class="hero" id="top">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Discogs login · scanner · library</p>
-        <h1>Scan. Match. Save the exact release.</h1>
-        <p class="hero-lead">Groovie turns Discogs login, barcode search, release matching and collection state into one native flow.</p>
+        <p class="eyebrow">Liquid glass music library</p>
+        <h1>Groovie feels like your record collection is already playing.</h1>
+        <p class="hero-lead">A dark, album-led iPhone app for Discogs login, barcode search, cover gradients, tracklists, marketplace context and an offline-ready local library.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#flow">Explore the flow</a>
+          <a class="button button-primary" href="#library">Explore the library</a>
           <span class="status"><span></span>In development</span>
         </div>
       </div>
 
-      <div class="app-flow reveal" aria-label="Groovie app workflow preview">
-        <div class="phone-frame">
+      <div class="hero-stage reveal" aria-label="Groovie app interface preview">
+        <div class="phone phone-library">
           <div class="phone-screen">
-            <div class="phone-status"><span>9:41</span><span>Discogs connected</span></div>
-            <div class="login-gate">
-              <div class="gate-topline"><span>Required entry</span><span>Persistent</span></div>
-              <strong>Sign in before the collection opens.</strong>
-              <div class="discogs-button">Continue with Discogs</div>
-            </div>
-            <div class="library-panel">
-              <div class="library-head">
-                <div>
-                  <span class="copy-label">Library</span>
-                  <strong>438 records</strong>
-                </div>
-                <span class="sync-pill">Synced</span>
+            <div class="phone-status"><span>9:41</span><span>Discogs synced</span></div>
+            <div class="library-header">
+              <div>
+                <h2>Groovie</h2>
+                <p>438 records</p>
               </div>
-              <div class="search-bar">Search artist, label, barcode...</div>
-              <div class="record-list">
-                <div class="record-row">
-                  <span class="cover-chip" style="--c:#3c6f8f;"></span>
-                  <div><strong>Computer World</strong><small>Kraftwerk · LP · DE</small></div>
-                  <em>VG+</em>
-                </div>
-                <div class="record-row">
-                  <span class="cover-chip" style="--c:#c8663b;"></span>
-                  <div><strong>Secrets</strong><small>Herbie Hancock · 1976</small></div>
-                  <em>NM</em>
-                </div>
-                <div class="record-row">
-                  <span class="cover-chip" style="--c:#4f7760;"></span>
-                  <div><strong>Promise</strong><small>Sade · Epic · EU</small></div>
-                  <em>Want</em>
-                </div>
+              <div class="glass-actions" aria-hidden="true">
+                <span>↻</span><span>⌕</span><span>▦</span><span>⌗</span>
               </div>
             </div>
-            <div class="bottom-tabs"><span>Library</span><span>Search</span><span>Wantlist</span></div>
+            <div class="search-pill">Artist, album, label</div>
+            <div class="chip-row"><span class="active">All</span><span>Jazz</span><span>Electronic</span><span>Soul</span></div>
+            <div class="album-grid">
+              <article class="album-card album-blue"><div class="album-art"><i></i></div><strong>Blue Train</strong><span>John Coltrane · LP</span></article>
+              <article class="album-card album-gold"><div class="album-art"><i></i></div><strong>Random Access Memories</strong><span>Daft Punk · 2xLP</span></article>
+              <article class="album-card album-violet"><div class="album-art"><i></i></div><strong>Mezzanine</strong><span>Massive Attack · 2xLP</span></article>
+              <article class="album-card album-rose"><div class="album-art"><i></i></div><strong>Miseducation</strong><span>Lauryn Hill · 2xLP</span></article>
+            </div>
           </div>
         </div>
-        <div class="release-focus">
-          <div class="release-art" aria-hidden="true"></div>
-          <p class="eyebrow">Matched release</p>
-          <h2>Not just the album. The pressing.</h2>
-          <div class="release-meta"><span>Germany</span><span>LP</span><span>1978</span><span>VG+</span></div>
-        </div>
-        <div class="scanner-sheet">
-          <div class="scan-top"><span>Fullscreen scanner</span><strong>Barcode + manual search</strong></div>
-          <div class="scan-window" aria-hidden="true"></div>
-          <div class="scan-result">Result ready · 3 Discogs versions found</div>
-        </div>
-      </div>
-    </section>
 
-    <section class="flow-section" id="flow">
-      <div class="section-shell">
-        <div class="section-heading reveal">
+        <div class="floating-detail glass-panel">
+          <div class="large-cover album-gold"><i></i></div>
           <div>
-            <p class="eyebrow">Actual app flow</p>
-            <h2>Four steps that explain why Groovie exists.</h2>
+            <p class="eyebrow">Now inspecting</p>
+            <h3>Random Access Memories</h3>
+            <p>Discogs release, tracklist and value cached locally.</p>
           </div>
-          <p>No anonymous browsing, no scanner tab, no decorative record wall. Groovie is a focused Discogs workflow.</p>
-        </div>
-        <div class="flow-grid">
-          <article class="flow-card reveal"><span>01</span><div><strong>Discogs first</strong><p>The app opens through a persistent Discogs login gate before the library appears.</p></div></article>
-          <article class="flow-card reveal"><span>02</span><div><strong>Library stays calm</strong><p>Black-gray chrome keeps browsing readable and lets collection state carry the information.</p></div></article>
-          <article class="flow-card reveal"><span>03</span><div><strong>Scan on demand</strong><p>Barcode scanning is a focused fullscreen flow, backed by manual Discogs search.</p></div></article>
-          <article class="flow-card reveal"><span>04</span><div><strong>Detail gets color</strong><p>Album-specific gradients belong to the release detail, not the whole app shell.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="detail-section" id="release">
-      <div class="section-shell detail-layout">
-        <div class="detail-panel reveal">
-          <span>Release detail</span>
-          <h2>Exact Discogs versions stay inspectable.</h2>
-          <dl class="detail-list">
-            <div><dt>Version</dt><dd>LP, Album, Reissue</dd></div>
-            <div><dt>Barcode</dt><dd>Scanned or typed manually</dd></div>
-            <div><dt>Collection</dt><dd>Condition, notes, folders</dd></div>
-            <div><dt>Wantlist</dt><dd>Missing copy, matched listing</dd></div>
+          <dl>
+            <div><dt>Median</dt><dd>EUR 64.00</dd></div>
+            <div><dt>Offline</dt><dd>Cover + details</dd></div>
           </dl>
         </div>
-        <div class="section-copy reveal">
-          <p class="eyebrow">Why Discogs matters</p>
-          <h2>The release is the product surface.</h2>
-          <p>For collectors, the album title is not enough. Groovie keeps release version, label, format, country, barcode, condition and personal collection state in one focused view.</p>
+
+        <div class="scanner-glass glass-panel" aria-label="Scanner preview">
+          <div class="scanner-top"><span>Barcode workflow</span><strong>Manuell eintippen</strong></div>
+          <div class="scanner-frame"><span></span></div>
+          <p>Scan EAN and UPC codes, then fall back to manual Discogs search.</p>
         </div>
       </div>
     </section>
 
-    <section class="release-section">
+    <section class="library-section" id="library">
+      <div class="section-shell split">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Collection view</p>
+          <h2>Album covers drive the page, not database tables.</h2>
+          <p>Groovie keeps the app chrome neutral black and gray, then lets each album create the color. The library uses soft glass controls, cover-led gradients and compact metadata so browsing stays musical.</p>
+        </div>
+        <div class="library-board reveal">
+          <article class="mini-album album-blue"><div></div><strong>Blue Train</strong><span>Hard Bop · 1958</span></article>
+          <article class="mini-album album-gold"><div></div><strong>Random Access Memories</strong><span>Disco · Synth-pop</span></article>
+          <article class="mini-album album-violet"><div></div><strong>Mezzanine</strong><span>Trip Hop · 1998</span></article>
+          <article class="mini-album album-rose"><div></div><strong>Miseducation</strong><span>Neo Soul · 2xLP</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section" id="detail">
+      <div class="section-shell detail-layout">
+        <div class="detail-visual reveal">
+          <div class="detail-background album-violet"></div>
+          <div class="detail-cover album-violet"><i></i></div>
+          <div class="glass-panel detail-card">
+            <h2>Mezzanine</h2>
+            <p>Massive Attack</p>
+            <div class="tag-row"><span>Electronic</span><span>Trip Hop</span><span>2xLP</span></div>
+          </div>
+        </div>
+        <div class="glass-panel track-panel reveal">
+          <p class="eyebrow">Album detail</p>
+          <h2>Tracklist, release data and market value in the same liquid sheet.</h2>
+          <div class="track-list">
+            <div><span>A1</span><strong>Angel</strong><em>6:18</em></div>
+            <div><span>A2</span><strong>Risingson</strong><em>4:58</em></div>
+            <div><span>B1</span><strong>Teardrop</strong><em>5:30</em></div>
+            <div><span>C1</span><strong>Inertia Creeps</strong><em>5:56</em></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scanner-section" id="scanner">
+      <div class="section-shell scanner-layout">
+        <div class="phone scanner-phone reveal">
+          <div class="camera-view">
+            <div class="camera-top"><span>×</span><strong>Scan</strong></div>
+            <div class="scan-target"><i></i></div>
+            <div class="scanner-bottom glass-panel">
+              <h3>Manuell eintippen</h3>
+              <div class="manual-row"><span>Barcode oder Album</span><strong>⌕</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="section-copy reveal">
+          <p class="eyebrow">Scanner</p>
+          <h2>Camera first, with manual search as the bottom action.</h2>
+          <p>The scanner is a full-screen moment: dark camera preview, glowing frame, glass controls and a manual search sheet when the barcode is missing or the pressing is older.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cache-section" id="cache">
       <div class="section-shell">
         <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">Library logic</p>
-            <h2>It should feel like using your Discogs data, not looking at a mood board.</h2>
+            <p class="eyebrow">Discogs underneath, Groovie on top</p>
+            <h2>Metadata comes from Discogs. The feeling comes from the music.</h2>
           </div>
-          <p>The visual system now uses app-like states and real collection concepts instead of decorative record covers.</p>
+          <p>Groovie still needs login, release metadata and marketplace context. The website now presents those as quiet infrastructure behind the album-led interface.</p>
         </div>
-        <div class="release-grid">
-          <article class="release-card reveal"><span>Search</span><strong>Barcode or text</strong><p>Scan a record in a store or type artist, title, label and catalog hints.</p></article>
-          <article class="release-card reveal"><span>Save</span><strong>Collection state</strong><p>Add condition, notes, folders and wantlist context to the exact release.</p></article>
-          <article class="release-card reveal"><span>Review</span><strong>Known changes</strong><p>Return to entries whose price, availability or metadata deserves another look.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="market-section" id="market">
-      <div class="section-shell market-layout">
-        <div class="market-board reveal" aria-label="Example market signals">
-          <div class="price-tile"><span>Median</span><strong>€42</strong></div>
-          <div class="price-tile"><span>For sale</span><strong>12</strong></div>
-          <div class="price-tile"><span>Wantlist</span><strong>31</strong></div>
-          <div class="price-tile"><span>Matched</span><strong>3</strong></div>
-        </div>
-        <div class="section-copy reveal">
-          <p class="eyebrow">Marketplace context</p>
-          <h2>Market data is useful only when it answers a collector question.</h2>
-          <p>Groovie does not need to look like a shop. It can show availability, price movement and wantlist matches as context for the record already being inspected.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="privacy-section" id="data">
-      <div class="section-shell privacy-layout reveal">
-        <div>
-          <p class="eyebrow">Data and persistence</p>
-          <h2>The login is not decoration. It is the app boundary.</h2>
-        </div>
-        <div class="privacy-copy">
-          <p><strong>Persistent Discogs state.</strong> Username and token state decide whether the user enters the real app.</p>
-          <p><strong>Cached responses.</strong> Barcode and text search can reuse Discogs responses without pretending the data is local-only.</p>
-          <p><strong>Native workflow.</strong> Fast checks belong to scanner/search; slower review belongs to collection and release detail.</p>
+        <div class="feature-grid">
+          <article class="glass-panel reveal"><span>01</span><strong>Persistent Discogs login</strong><p>The collection opens only when account state is available.</p></article>
+          <article class="glass-panel reveal"><span>02</span><strong>Offline-first cache</strong><p>Release responses and covers stay ready for repeat access.</p></article>
+          <article class="glass-panel reveal"><span>03</span><strong>Marketplace value</strong><p>Median, lowest, trend and for-sale counts sit inside album detail.</p></article>
+          <article class="glass-panel reveal"><span>04</span><strong>Native SwiftUI glass</strong><p>The web page mirrors the app’s translucent panels and cover gradients.</p></article>
         </div>
       </div>
     </section>
 
     <section class="closing-section">
-      <div class="section-shell closing-inner reveal">
-        <span class="groovie-brand-mark closing-mark" aria-hidden="true">G</span>
+      <div class="section-shell closing-inner glass-panel reveal">
+        <span class="closing-icon"><img src="../../AppIcons/Groovie-current.png" alt=""></span>
         <p class="eyebrow">Groovie for iPhone</p>
-        <h2>Discogs login, scanner and collection context in one native flow.</h2>
+        <h2>A liquid glass music library powered by Discogs.</h2>
         <a class="button button-secondary" href="../../index.html">Back to portfolio</a>
       </div>
     </section>
@@ -193,7 +181,7 @@
 
   <footer class="app-footer">
     <a href="../../index.html">Dyonisos Fergadiotis</a>
-    <span class="app-footer-product">Groovie · Discogs App</span>
+    <span class="app-footer-product">Groovie · iOS Music Library</span>
     <span class="app-footer-copy">&copy; <span data-current-year></span></span>
   </footer>
   <script src="../app-shell.js?v=20260615-scroll-reveal" defer></script>
