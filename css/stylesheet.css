@@ -652,32 +652,78 @@ section {
 .groovie-media {
     min-height: 420px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+    grid-template-columns: minmax(280px, 0.78fr) minmax(240px, 0.55fr);
     gap: 18px;
     align-items: end;
     padding: clamp(24px, 4vw, 52px);
 }
 
-.groovie-shelf {
-    min-height: 300px;
-    display: flex;
-    align-items: end;
-    gap: 7px;
-    padding: 24px;
+.groovie-phone-card {
+    min-height: 310px;
+    padding: 22px;
+    display: grid;
+    align-content: start;
+    gap: 12px;
     border: 1px solid rgba(255, 246, 232, 0.14);
     border-radius: 18px;
     background: rgba(255, 246, 232, 0.05);
 }
 
-.groovie-shelf span {
-    width: var(--w);
-    height: calc(178px + (var(--w) * 2));
-    display: block;
-    border-radius: 4px 4px 1px 1px;
-    background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.13), transparent 26%),
-        var(--c);
-    box-shadow: inset 0 -12px 0 rgba(0, 0, 0, 0.18);
+.groovie-phone-top {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.groovie-phone-top span {
+    color: #c7b69d;
+    font-size: 0.74rem;
+    font-weight: 780;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.groovie-phone-top strong {
+    color: #fff6e8;
+    font-size: clamp(2rem, 5vw, 4.2rem);
+    line-height: 0.9;
+}
+
+.groovie-mini-row {
+    min-height: 54px;
+    padding: 9px 10px;
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 246, 232, 0.1);
+    border-radius: 14px;
+    color: #fff6e8;
+    background: rgba(255, 246, 232, 0.06);
+}
+
+.groovie-mini-row i {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--c), #17120e 74%);
+}
+
+.groovie-mini-row span {
+    min-width: 0;
+    overflow: hidden;
+    font-weight: 760;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.groovie-mini-row em {
+    color: #c7b69d;
+    font-size: 0.78rem;
+    font-style: normal;
+    font-weight: 780;
 }
 
 .groovie-release-card {
@@ -1294,7 +1340,7 @@ section {
         padding-top: 0;
     }
 
-    .groovie-shelf {
+    .groovie-phone-card {
         min-height: 250px;
     }
 
@@ -1413,15 +1459,18 @@ section {
         border-radius: 15px;
     }
 
-    .groovie-shelf {
-        min-height: 210px;
+    .groovie-phone-card {
+        min-height: 230px;
         padding: 16px;
-        gap: 5px;
     }
 
-    .groovie-shelf span {
-        width: max(20px, calc(var(--w) * 0.72));
-        height: calc(136px + var(--w));
+    .groovie-mini-row {
+        grid-template-columns: 32px 1fr auto;
+    }
+
+    .groovie-mini-row i {
+        width: 32px;
+        height: 32px;
     }
 
     .project-card-featured {
