@@ -10,7 +10,7 @@
   <title>Wetterblatt · Weather Journal</title>
   <link rel="icon" href="../../AppIcons/Wetterblatt-current.png">
   <link rel="apple-touch-icon" href="../../AppIcons/Wetterblatt-current.png">
-  <link rel="stylesheet" href="../../css/motion.css?v=20260614">
+  <link rel="stylesheet" href="../../css/motion.css?v=20260624-dynamic-scroll">
   <style>
     :root {
       --paper: #f7f0e4;
@@ -138,8 +138,7 @@
     }
     footer { width: min(calc(100% - 40px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)), var(--max)); margin: 0 auto; padding: 34px 0 50px; display: flex; justify-content: space-between; color: var(--faint); font-size: .78rem; }
     @media (min-width: 801px) {
-      html { scroll-snap-type: y proximity; }
-      main > section { min-height: calc(100svh - 62px); scroll-snap-align: start; }
+      main > section { min-height: calc(100svh - 62px); }
       section { padding: clamp(58px, 8svh, 96px) 0; }
       main > section#top { padding: 0; }
       .hero { height: calc(100svh - 62px); min-height: 620px; }
@@ -336,6 +335,6 @@
     window.setInterval(updateTimeTheme, 60000);
   </script>
   <script src="../app-shell.js?v=20260615-scroll-reveal"></script>
-  <script src="../../js/motion.js?v=20260614"></script>
+  <script src="../../js/motion.js?v=20260624-dynamic-scroll"></script>
 </body>
 </html>

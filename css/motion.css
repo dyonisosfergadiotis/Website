@@ -34,17 +34,90 @@ body.motion-pointer-active .motion-cursor-glow {
     opacity: 1;
 }
 
+html.motion-ready,
+html.motion-ready body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+    html.motion-ready,
+    html.motion-ready body {
+        overflow-x: hidden;
+    }
+}
+
 .motion-ready .motion-reveal {
+    --motion-reveal-y: 34px;
+    --motion-scroll-x: 0px;
+    --motion-scroll-y: 0px;
+    --motion-scroll-rotate: 0deg;
+    --motion-scroll-scale: 1;
+    --motion-flow-opacity: 1;
     opacity: 0;
-    translate: 0 34px;
+    translate: var(--motion-scroll-x) calc(var(--motion-reveal-y) + var(--motion-scroll-y));
+    rotate: var(--motion-scroll-rotate);
+    scale: var(--motion-scroll-scale);
+    transform-origin: 50% 65%;
     transition:
         opacity 800ms ease var(--motion-delay, 0ms),
-        translate 900ms var(--motion-ease) var(--motion-delay, 0ms);
+        translate 900ms var(--motion-ease) var(--motion-delay, 0ms),
+        rotate 900ms var(--motion-ease) var(--motion-delay, 0ms),
+        scale 900ms var(--motion-ease) var(--motion-delay, 0ms);
 }
 
 .motion-ready .motion-reveal.motion-visible {
-    opacity: 1;
-    translate: 0 0;
+    --motion-reveal-y: 0px;
+    opacity: var(--motion-flow-opacity);
+}
+
+.motion-flow {
+    --motion-scroll-x: 0px;
+    --motion-scroll-y: 0px;
+    --motion-scroll-rotate: 0deg;
+    --motion-scroll-scale: 1;
+    --motion-flow-opacity: 1;
+    translate: var(--motion-scroll-x) var(--motion-scroll-y);
+    rotate: var(--motion-scroll-rotate);
+    scale: var(--motion-scroll-scale);
+    transform-origin: 50% 62%;
+    will-change: translate, rotate, scale, opacity;
+}
+
+.motion-flow-text {
+    transform-origin: 0 55%;
+}
+
+html[data-motion-page="portfolio"] .motion-progress {
+    height: 4px;
+    background: linear-gradient(90deg, #101116, var(--blue, #1769e0), var(--green, #237b38));
+    box-shadow: 0 0 24px rgba(23, 105, 224, 0.32);
+}
+
+html[data-motion-page="portfolio"] .portfolio-scroll-motion {
+    --portfolio-x: 0px;
+    --portfolio-y: 0px;
+    --portfolio-rotate: 0deg;
+    --portfolio-scale: 1;
+    --portfolio-opacity: 1;
+    opacity: var(--portfolio-opacity);
+    translate: var(--portfolio-x) var(--portfolio-y);
+    rotate: var(--portfolio-rotate);
+    scale: var(--portfolio-scale);
+    transform-origin: 50% 60%;
+    will-change: opacity, translate, rotate, scale;
+}
+
+html[data-motion-page="portfolio"] .project-card.portfolio-scroll-motion {
+    box-shadow: 0 28px 80px rgba(39, 54, 78, calc(0.05 + (var(--portfolio-opacity) * 0.09)));
+}
+
+html[data-motion-page="portfolio"] .timeline article.portfolio-scroll-motion {
+    transform-origin: 0 0;
+}
+
+html[data-motion-page="portfolio"] .hero-visual.portfolio-scroll-motion {
+    transform-origin: 58% 44%;
 }
 
 .motion-ready .chapter-transition .chapter-transition-line {
@@ -81,13 +154,23 @@ body.motion-pointer-active .motion-cursor-glow {
     --motion-rx: 0deg;
     --motion-ry: 0deg;
     --motion-lift: 0px;
+    --motion-scroll-x: 0px;
+    --motion-scroll-y: 0px;
+    --motion-scroll-rotate: 0deg;
+    --motion-scroll-scale: 1;
+    translate: var(--motion-scroll-x) var(--motion-scroll-y);
+    rotate: var(--motion-scroll-rotate);
+    scale: var(--motion-scroll-scale);
     transform: perspective(1000px) rotateX(var(--motion-rx)) rotateY(var(--motion-ry)) translateY(var(--motion-lift));
     transform-style: preserve-3d;
     transition:
         transform 420ms var(--motion-ease),
+        translate 760ms var(--motion-ease),
+        rotate 760ms var(--motion-ease),
+        scale 760ms var(--motion-ease),
         border-color 300ms ease,
         box-shadow 420ms ease;
-    will-change: transform;
+    will-change: transform, translate, rotate, scale;
 }
 
 .motion-tilt:hover {
@@ -166,6 +249,8 @@ body.motion-pointer-active .motion-cursor-glow {
     .motion-ready .motion-reveal {
         opacity: 1;
         translate: none;
+        rotate: none;
+        scale: none;
     }
 
     .motion-ready .chapter-transition .chapter-transition-line,
@@ -176,8 +261,13 @@ body.motion-pointer-active .motion-cursor-glow {
 
     .motion-tilt,
     .motion-magnetic,
-    .motion-parallax {
+    .motion-parallax,
+    .motion-flow,
+    .portfolio-scroll-motion {
+        opacity: 1 !important;
         translate: none !important;
+        rotate: none !important;
+        scale: none !important;
         transform: none !important;
     }
 

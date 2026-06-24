@@ -1176,13 +1176,8 @@ footer a {
 }
 
 @media (min-width: 981px) {
-  html {
-    scroll-snap-type: y proximity;
-  }
-
   main > section {
     min-height: calc(100svh - 72px);
-    scroll-snap-align: start;
   }
 
   .hero {

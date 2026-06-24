@@ -323,8 +323,8 @@ footer { display: flex; width: min(calc(100% - 40px), var(--max)); margin: 0 aut
 }
 
 @media (min-width: 961px) {
-  html { scroll-padding-top: 96px; scroll-snap-type: y proximity; }
-  main > section { min-height: 100svh; scroll-snap-align: start; }
+  html { scroll-padding-top: 96px; }
+  main > section { min-height: 100svh; }
 
   .hero {
     height: 100svh;
