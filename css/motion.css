@@ -2,38 +2,6 @@
     --motion-ease: cubic-bezier(.2, .75, .25, 1);
 }
 
-.motion-progress {
-    position: fixed;
-    inset: 0 0 auto;
-    z-index: 1000;
-    width: 100%;
-    height: 3px;
-    pointer-events: none;
-    transform: scaleX(var(--motion-scroll, 0));
-    transform-origin: left;
-    background: var(--accent, var(--blue, var(--wb-accent, #1769e0)));
-    box-shadow: 0 0 18px color-mix(in srgb, currentColor 45%, transparent);
-}
-
-.motion-cursor-glow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0;
-    translate: -50% -50%;
-    background: radial-gradient(circle, color-mix(in srgb, var(--accent, var(--blue, var(--wb-accent, #1769e0))) 13%, transparent), transparent 68%);
-    transition: opacity 350ms ease;
-}
-
-body.motion-pointer-active .motion-cursor-glow {
-    opacity: 1;
-}
-
 html.motion-ready,
 html.motion-ready body {
     max-width: 100%;
@@ -48,81 +16,24 @@ html.motion-ready body {
 }
 
 .motion-ready .motion-reveal {
-    --motion-reveal-y: 34px;
-    --motion-scroll-x: 0px;
-    --motion-scroll-y: 0px;
-    --motion-scroll-rotate: 0deg;
-    --motion-scroll-scale: 1;
-    --motion-flow-opacity: 1;
     opacity: 0;
-    translate: var(--motion-scroll-x) calc(var(--motion-reveal-y) + var(--motion-scroll-y));
-    rotate: var(--motion-scroll-rotate);
-    scale: var(--motion-scroll-scale);
-    transform-origin: 50% 65%;
+    transform: translate3d(0, 20px, 0);
     transition:
-        opacity 800ms ease var(--motion-delay, 0ms),
-        translate 900ms var(--motion-ease) var(--motion-delay, 0ms),
-        rotate 900ms var(--motion-ease) var(--motion-delay, 0ms),
-        scale 900ms var(--motion-ease) var(--motion-delay, 0ms);
+        opacity 520ms ease var(--motion-delay, 0ms),
+        transform 620ms var(--motion-ease) var(--motion-delay, 0ms);
 }
 
 .motion-ready .motion-reveal.motion-visible {
-    --motion-reveal-y: 0px;
-    opacity: var(--motion-flow-opacity);
-}
-
-.motion-flow {
-    --motion-scroll-x: 0px;
-    --motion-scroll-y: 0px;
-    --motion-scroll-rotate: 0deg;
-    --motion-scroll-scale: 1;
-    --motion-flow-opacity: 1;
-    translate: var(--motion-scroll-x) var(--motion-scroll-y);
-    rotate: var(--motion-scroll-rotate);
-    scale: var(--motion-scroll-scale);
-    transform-origin: 50% 62%;
-    will-change: translate, rotate, scale, opacity;
-}
-
-.motion-flow-text {
-    transform-origin: 0 55%;
-}
-
-html[data-motion-page="portfolio"] .motion-progress {
-    height: 4px;
-    background: linear-gradient(90deg, #101116, var(--blue, #1769e0), var(--green, #237b38));
-    box-shadow: 0 0 24px rgba(23, 105, 224, 0.32);
-}
-
-html[data-motion-page="portfolio"] .portfolio-scroll-motion {
-    --portfolio-x: 0px;
-    --portfolio-y: 0px;
-    --portfolio-rotate: 0deg;
-    --portfolio-scale: 1;
-    --portfolio-opacity: 1;
-    opacity: var(--portfolio-opacity);
-    translate: var(--portfolio-x) var(--portfolio-y);
-    rotate: var(--portfolio-rotate);
-    scale: var(--portfolio-scale);
-    transform-origin: 50% 60%;
-    will-change: opacity, translate, rotate, scale;
-}
-
-html[data-motion-page="portfolio"] .project-card.portfolio-scroll-motion {
-    box-shadow: 0 28px 80px rgba(39, 54, 78, calc(0.05 + (var(--portfolio-opacity) * 0.09)));
-}
-
-html[data-motion-page="portfolio"] .timeline article.portfolio-scroll-motion {
-    transform-origin: 0 0;
-}
-
-html[data-motion-page="portfolio"] .hero-visual.portfolio-scroll-motion {
-    transform-origin: 58% 44%;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 .motion-ready .chapter-transition .chapter-transition-line {
-    transform: scaleX(0);
-    transition: transform 900ms var(--motion-ease);
+    opacity: 0;
+    transform: scaleX(.88);
+    transition:
+        opacity 420ms ease,
+        transform 560ms var(--motion-ease);
 }
 
 .motion-ready .chapter-transition .chapter-transition-line:first-child {
@@ -135,73 +46,25 @@ html[data-motion-page="portfolio"] .hero-visual.portfolio-scroll-motion {
 
 .motion-ready .chapter-transition .chapter-transition-node {
     opacity: 0;
-    transform: scale(.72);
+    transform: scale(.92);
     transition:
-        opacity 500ms ease 180ms,
-        transform 700ms var(--motion-ease) 180ms;
+        opacity 420ms ease 90ms,
+        transform 520ms var(--motion-ease) 90ms;
 }
 
-.motion-ready .chapter-transition.motion-visible .chapter-transition-line {
-    transform: scaleX(1);
-}
-
+.motion-ready .chapter-transition.motion-visible .chapter-transition-line,
 .motion-ready .chapter-transition.motion-visible .chapter-transition-node {
     opacity: 1;
-    transform: scale(1);
+    transform: none;
 }
 
-.motion-tilt {
-    --motion-rx: 0deg;
-    --motion-ry: 0deg;
-    --motion-lift: 0px;
-    --motion-scroll-x: 0px;
-    --motion-scroll-y: 0px;
-    --motion-scroll-rotate: 0deg;
-    --motion-scroll-scale: 1;
-    translate: var(--motion-scroll-x) var(--motion-scroll-y);
-    rotate: var(--motion-scroll-rotate);
-    scale: var(--motion-scroll-scale);
-    transform: perspective(1000px) rotateX(var(--motion-rx)) rotateY(var(--motion-ry)) translateY(var(--motion-lift));
-    transform-style: preserve-3d;
-    transition:
-        transform 420ms var(--motion-ease),
-        translate 760ms var(--motion-ease),
-        rotate 760ms var(--motion-ease),
-        scale 760ms var(--motion-ease),
-        border-color 300ms ease,
-        box-shadow 420ms ease;
-    will-change: transform, translate, rotate, scale;
-}
-
-.motion-tilt:hover {
-    --motion-lift: -6px;
-    box-shadow: 0 28px 80px rgba(24, 38, 65, 0.16);
-}
-
-.motion-tilt > * {
-    transform: translateZ(0);
-    transition: transform 420ms var(--motion-ease);
-}
-
-.motion-tilt:hover > * {
-    transform: translateZ(14px);
-}
-
-.motion-magnetic {
-    translate: var(--motion-x, 0px) var(--motion-y, 0px);
-    transition:
-        translate 280ms var(--motion-ease),
-        transform 180ms ease,
-        box-shadow 180ms ease;
-    will-change: translate;
-}
-
+.motion-flow,
+.portfolio-scroll-motion,
+.motion-tilt,
+.motion-magnetic,
 .motion-parallax {
-    will-change: translate;
-}
-
-.motion-ready .motion-stagger > * {
-    transition-delay: calc(var(--motion-index, 0) * 70ms);
+    opacity: 1;
+    transform: none;
 }
 
 .placeholder,
@@ -211,69 +74,21 @@ html[data-motion-page="portfolio"] .hero-visual.portfolio-scroll-motion {
     overflow: hidden;
 }
 
-.placeholder::after,
-.media-placeholder::after,
-.app-shot-placeholder::after {
-    position: absolute;
-    inset: -45% auto -45% -45%;
-    width: 34%;
-    content: "";
-    pointer-events: none;
-    rotate: 12deg;
-    background: linear-gradient(90deg, transparent, color-mix(in srgb, currentColor 8%, transparent), transparent);
-    animation: motion-preview-sheen 6s ease-in-out infinite;
-}
-
-@keyframes motion-preview-sheen {
-    0%, 22% { translate: 0 0; opacity: 0; }
-    35% { opacity: 1; }
-    64%, 100% { translate: 520% 0; opacity: 0; }
-}
-
-@media (hover: none), (pointer: coarse) {
-    .motion-cursor-glow {
-        display: none;
-    }
-
-    .motion-tilt:hover {
-        --motion-lift: 0px;
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
-    .motion-progress,
-    .motion-cursor-glow {
-        display: none;
+    html {
+        scroll-behavior: auto;
     }
 
-    .motion-ready .motion-reveal {
-        opacity: 1;
-        translate: none;
-        rotate: none;
-        scale: none;
-    }
-
+    .motion-ready .motion-reveal,
     .motion-ready .chapter-transition .chapter-transition-line,
-    .motion-ready .chapter-transition .chapter-transition-node {
-        opacity: 1;
-        transform: none;
-    }
-
+    .motion-ready .chapter-transition .chapter-transition-node,
+    .motion-flow,
+    .portfolio-scroll-motion,
     .motion-tilt,
     .motion-magnetic,
-    .motion-parallax,
-    .motion-flow,
-    .portfolio-scroll-motion {
+    .motion-parallax {
         opacity: 1 !important;
-        translate: none !important;
-        rotate: none !important;
-        scale: none !important;
         transform: none !important;
-    }
-
-    .placeholder::after,
-    .media-placeholder::after,
-    .app-shot-placeholder::after {
-        display: none;
+        transition: none !important;
     }
 }

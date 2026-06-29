@@ -4,6 +4,8 @@ const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 const navigationItems = [...document.querySelectorAll('.nav-links a')];
 const sections = [...document.querySelectorAll('main section[id]')];
+const filterButtons = [...document.querySelectorAll('.filter-button')];
+const projectCards = [...document.querySelectorAll('.project-card[data-categories]')];
 
 navToggle?.addEventListener('click', () => {
     const isOpen = navToggle.classList.toggle('active');
@@ -34,6 +36,23 @@ const sectionObserver = new IntersectionObserver((entries) => {
 });
 
 sections.forEach((section) => sectionObserver.observe(section));
+
+filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const filter = button.dataset.filter || 'all';
+
+        filterButtons.forEach((item) => {
+            const isActive = item === button;
+            item.classList.toggle('active', isActive);
+            item.setAttribute('aria-pressed', String(isActive));
+        });
+
+        projectCards.forEach((card) => {
+            const categories = (card.dataset.categories || '').split(/\s+/);
+            card.hidden = filter !== 'all' && !categories.includes(filter);
+        });
+    });
+});
 
 const yearElement = document.getElementById('current-year');
 if (yearElement) {
