@@ -1404,7 +1404,7 @@ section {
     }
 
     section {
-        padding: 76px 0;
+        padding: 68px 0;
     }
 
     .chapter-transition {
@@ -1431,13 +1431,14 @@ section {
     }
 
     .hero {
-        gap: 48px;
-        padding-top: calc(130px + var(--safe-top));
+        gap: 40px;
+        padding-top: calc(116px + var(--safe-top));
     }
 
     .hero h1 {
-        font-size: clamp(2.9rem, 14vw, 4.6rem);
-        line-height: 0.98;
+        font-size: clamp(2.65rem, 10.5vw, 4rem);
+        letter-spacing: -0.025em;
+        line-height: 1.02;
     }
 
     .hero-lead {
@@ -1457,7 +1458,16 @@ section {
     }
 
     .project-filter {
-        max-width: 100%;
+        width: 100%;
+        max-width: 520px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-radius: 18px;
+    }
+
+    .filter-button {
+        min-width: 0;
+        padding-inline: 10px;
     }
 
     .project-card-featured,
@@ -1470,7 +1480,7 @@ section {
     }
 
     .project-media {
-        min-height: clamp(330px, 58vw, 430px);
+        min-height: clamp(300px, 54vw, 390px);
     }
 
     .project-card-wide {
@@ -1529,11 +1539,11 @@ section {
     }
 
     .project-copy {
-        padding: 30px 24px;
+        padding: 24px 20px;
     }
 
     section {
-        padding: 64px 0;
+        padding: 56px 0;
     }
 
     .chapter-transition {
@@ -1543,7 +1553,9 @@ section {
     }
 
     .hero {
-        padding-top: calc(112px + var(--safe-top));
+        gap: 32px;
+        padding-top: calc(94px + var(--safe-top));
+        padding-bottom: 48px;
     }
 
     .hero-intro {
@@ -1555,27 +1567,46 @@ section {
     }
 
     .hero h1 {
-        margin-bottom: 24px;
-        font-size: clamp(2.65rem, 13.5vw, 3.5rem);
+        margin-bottom: 20px;
+        font-size: clamp(2.35rem, 10.8vw, 3rem);
+    }
+
+    .hero-lead {
+        margin-bottom: 28px;
+        line-height: 1.55;
     }
 
     .hero-actions {
-        align-items: stretch;
-        flex-direction: column;
-        gap: 14px;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px 14px;
     }
 
     .hero-actions .button {
-        width: 100%;
+        width: auto;
+        min-height: 44px;
+        gap: 12px;
+        padding: 10px 16px;
+        font-size: 0.86rem;
     }
 
     .hero-actions .text-link {
         padding: 10px 2px;
+        font-size: 0.86rem;
+    }
+
+    .hero-actions .text-link span {
+        margin-left: 8px;
     }
 
     .hero-visual {
+        width: min(72vw, 276px);
         padding: 10px;
         border-radius: 28px;
+    }
+
+    .hero-visual figcaption {
+        padding: 12px 8px 4px;
     }
 
     .portrait-frame {
@@ -1597,12 +1628,20 @@ section {
         min-height: auto;
     }
 
+    .project-card {
+        border-radius: 24px;
+    }
+
+    .project-filter {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .newsfeeder-media {
-        padding: 22px;
+        padding: 18px;
     }
 
     .project-media {
-        min-height: clamp(292px, 86vw, 360px);
+        min-height: clamp(252px, 72vw, 320px);
     }
 
     .project-card-compact {
@@ -1610,8 +1649,8 @@ section {
     }
 
     .payscope-media {
-        min-height: 280px;
-        padding: 18px;
+        min-height: 246px;
+        padding: 16px;
     }
 
     .nf-shot-feed {
@@ -1630,8 +1669,12 @@ section {
     .nf-widget-stack {
         left: 18%;
         top: 8%;
-        width: 58%;
-        padding: 14px;
+        width: 56%;
+        padding: 12px;
+    }
+
+    .nf-widget-stack p {
+        font-size: 0.76rem;
     }
 
     .ps-calendar-shot {
@@ -1644,8 +1687,16 @@ section {
     .ps-shift-snapshot {
         left: 18px;
         bottom: 24px;
-        width: min(76%, 230px);
-        padding: 15px;
+        width: min(74%, 218px);
+        padding: 13px;
+    }
+
+    .ps-shift-snapshot strong {
+        font-size: 1.08rem;
+    }
+
+    .ps-shift-snapshot p {
+        font-size: 0.75rem;
     }
 
     .project-title-row {
@@ -1658,7 +1709,8 @@ section {
     }
 
     .weather-showcase {
-        padding: 24px;
+        min-height: 0;
+        padding: 20px;
     }
 
     .weather-showcase::before {
@@ -1667,7 +1719,7 @@ section {
     }
 
     .weather-forecast {
-        padding: 18px;
+        padding: 16px;
     }
 
     .weather-hours {
@@ -1680,7 +1732,7 @@ section {
     }
 
     .about {
-        gap: 72px;
+        gap: 48px;
     }
 
     .approach-list li {
@@ -1893,27 +1945,31 @@ section {
 
 @media (max-width: 720px) {
     .hero {
-        gap: 48px;
-        padding-top: calc(130px + var(--safe-top));
-        padding-bottom: 82px;
+        gap: 40px;
+        padding-top: calc(116px + var(--safe-top));
+        padding-bottom: 68px;
     }
 
     .hero h1 {
-        font-size: clamp(2.9rem, 14vw, 4.6rem);
-        line-height: 0.98;
+        font-size: clamp(2.65rem, 10.5vw, 4rem);
+        letter-spacing: -0.025em;
+        line-height: 1.02;
     }
 }
 
 @media (max-width: 440px) {
     .hero {
-        padding-top: calc(112px + var(--safe-top));
+        gap: 32px;
+        padding-top: calc(94px + var(--safe-top));
+        padding-bottom: 48px;
     }
 
     .hero h1 {
-        font-size: clamp(2.65rem, 13.5vw, 3.5rem);
+        font-size: clamp(2.35rem, 10.8vw, 3rem);
     }
 
     .hero-visual {
+        width: min(72vw, 276px);
         padding: 10px;
         border-radius: 28px;
     }
@@ -1921,12 +1977,12 @@ section {
 
 @media (max-width: 360px) {
     .hero {
-        gap: 40px;
-        padding-top: calc(102px + var(--safe-top));
+        gap: 32px;
+        padding-top: calc(92px + var(--safe-top));
     }
 
     .hero h1 {
-        font-size: clamp(2.35rem, 13vw, 2.9rem);
+        font-size: clamp(2.12rem, 10.5vw, 2.55rem);
     }
 
     .project-media {
@@ -1939,5 +1995,32 @@ section {
 
     .ps-shift-snapshot {
         width: min(82%, 220px);
+    }
+}
+
+@media (max-width: 440px) {
+    .hero-visual {
+        width: 100%;
+        max-width: 350px;
+        display: grid;
+        grid-template-columns: minmax(78px, 92px) minmax(0, 1fr);
+        align-items: center;
+        gap: 12px;
+        padding: 8px;
+        border-radius: 22px;
+    }
+
+    .hero-visual::before {
+        inset: 12% -8% -12% 28%;
+        filter: blur(16px);
+    }
+
+    .portrait-frame {
+        aspect-ratio: 1;
+        border-radius: 16px;
+    }
+
+    .hero-visual figcaption {
+        padding: 0 8px 0 0;
     }
 }
