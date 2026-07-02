@@ -93,37 +93,6 @@
             </div>
 
             <div class="project-gallery">
-                <article class="project-card project-card-groovie" data-categories="ios music collection">
-                    <div class="project-copy">
-                        <div class="project-title-row">
-                            <img src="AppIcons/Groovie-current.png" alt="" width="72" height="72">
-                            <div>
-                                <h3>Groovie</h3>
-                                <p>Liquid Glass Music Library</p>
-                            </div>
-                        </div>
-                        <p>An Apple Music-like record library with liquid glass panels, album gradients, barcode search
-                            and Discogs-powered release detail.</p>
-                        <a class="project-link project-link-groovie" href="projects/GV/Groovie.html">View project <span aria-hidden="true">→</span></a>
-                    </div>
-                    <div class="project-media groovie-media" aria-label="Groovie music library preview">
-                        <div class="groovie-phone-card" aria-hidden="true">
-                            <div class="groovie-phone-top"><span>Groovie</span><strong>438</strong></div>
-                            <div class="groovie-cover-grid">
-                                <i style="--c1:#347c9f; --c2:#16314d;"></i>
-                                <i style="--c1:#d7a94e; --c2:#6f4a96;"></i>
-                                <i style="--c1:#1b2034; --c2:#975168;"></i>
-                                <i style="--c1:#a45165; --c2:#d5a34f;"></i>
-                            </div>
-                        </div>
-                        <div class="groovie-release-card">
-                            <span>Liquid glass detail</span>
-                            <strong>EUR 64</strong>
-                            <p>Tracklist, cover cache and marketplace value inside one album sheet.</p>
-                        </div>
-                    </div>
-                </article>
-
                 <article class="project-card project-card-featured" data-categories="ios widgets">
                     <div class="project-copy">
                         <div class="project-title-row">
@@ -138,12 +107,21 @@
                         <a class="project-link" href="projects/NF/NewsFeeder.html">View project <span aria-hidden="true">→</span></a>
                     </div>
                     <div class="project-media newsfeeder-media">
-                        <img class="screen screen-feed" src="projects/NF/AppViews/Feed-iPhone17ProMax.png"
-                            alt="NewsFeeder article feed">
-                        <img class="screen screen-reader" src="projects/NF/AppViews/Reader-iPhone17ProMax.png"
-                            alt="NewsFeeder reader view">
-                        <img class="screen screen-search" src="projects/NF/AppViews/View_Search.PNG"
-                            alt="NewsFeeder search view">
+                        <div class="nf-app-scene" aria-hidden="true">
+                            <figure class="nf-shot nf-shot-feed">
+                                <img src="projects/NF/AppViews/Feed-iPhone17ProMax.png" alt="">
+                            </figure>
+                            <div class="nf-widget-stack">
+                                <div>
+                                    <span>Unread</span>
+                                    <strong>18</strong>
+                                </div>
+                                <p>MacRumors, The Verge and SwiftLee ready offline.</p>
+                            </div>
+                            <figure class="nf-shot nf-shot-reader">
+                                <img src="projects/NF/AppViews/Reader-iPhone17ProMax.png" alt="">
+                            </figure>
+                        </div>
                     </div>
                 </article>
 
@@ -161,7 +139,15 @@
                         <a class="project-link" href="projects/PS/PayScope.html">View project <span aria-hidden="true">→</span></a>
                     </div>
                     <div class="project-media payscope-media">
-                        <img src="projects/PS/AppViews/Calendar.png" alt="PayScope calendar view">
+                        <figure class="ps-calendar-shot" aria-hidden="true">
+                            <img src="projects/PS/AppViews/Calendar.png" alt="">
+                        </figure>
+                        <div class="ps-shift-snapshot" aria-hidden="true">
+                            <span>Today</span>
+                            <strong>09:00-17:00</strong>
+                            <div><i style="width: 64%"></i></div>
+                            <p>4h 37m worked · EUR 66.94 expected</p>
+                        </div>
                     </div>
                 </article>
 
@@ -178,9 +164,32 @@
                             offline.</p>
                         <a class="project-link" href="projects/WB/Wetterblatt.html">View project <span aria-hidden="true">→</span></a>
                     </div>
-                    <div class="weather-wordmark" aria-hidden="true">
-                        <img src="AppIcons/Wetterblatt-current.png" alt="">
-                        <span>Weather that stays honest about time.</span>
+                    <div class="weather-showcase" aria-hidden="true">
+                        <div class="weather-forecast">
+                            <div class="weather-forecast-top">
+                                <img src="AppIcons/Wetterblatt-current.png" alt="">
+                                <div>
+                                    <span>Fresh 12 min ago</span>
+                                    <strong>21°</strong>
+                                </div>
+                            </div>
+                            <div class="weather-hours">
+                                <span>Now<br><b>21°</b></span>
+                                <span>13<br><b>22°</b></span>
+                                <span>14<br><b>23°</b></span>
+                                <span>15<br><b>Rain</b></span>
+                            </div>
+                        </div>
+                        <div class="weather-journal">
+                            <span>Wetterblatt</span>
+                            <strong>Forecast with memory</strong>
+                            <p>Offline state, freshness and daily context stay visible before the weather changes.</p>
+                        </div>
+                        <div class="weather-celestial">
+                            <img src="projects/WB/celestial/sun.png" alt="">
+                            <img src="projects/WB/celestial/moon-waxing-gibbous.png" alt="">
+                            <img src="projects/WB/celestial/moon-full.png" alt="">
+                        </div>
                     </div>
                 </article>
             </div>
