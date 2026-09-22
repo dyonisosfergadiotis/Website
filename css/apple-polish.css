@@ -53,6 +53,7 @@ section { padding-inline: max(24px, calc((100vw - var(--content-width)) / 2)); }
 .section-label { color: var(--secondary); font-size: .85rem; text-transform: none; letter-spacing: 0; }
 .section-label span { display: none; }
 .project-filter { border-radius: 999px; }
+.filter-button { font-size: .875rem; }
 .project-card { min-height: 680px; border: 0; border-radius: 36px; box-shadow: none; overflow: hidden; }
 .project-card-featured { background: #09111f; }
 .project-card-payscope { background: #071427; }
@@ -76,6 +77,7 @@ section { padding-inline: max(24px, calc((100vw - var(--content-width)) / 2)); }
   .hero { min-height: auto; padding-top: 110px; }
   .hero h1 { font-size: clamp(3.3rem, 13.5vw, 5.1rem); }
   .project-card { min-height: 600px; border-radius: 28px; }
+  .project-filter { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   section { padding: 48px max(18px, env(safe-area-inset-left)) 48px max(18px, env(safe-area-inset-right)); }
@@ -89,7 +91,7 @@ section { padding-inline: max(24px, calc((100vw - var(--content-width)) / 2)); }
   .project-copy h3 { font-size: 1.75rem; letter-spacing: 0; }
   .project-title-row img { width: 48px; height: 48px; border-radius: 12px; }
   .project-copy > p { font-size: 1rem; }
-  .project-filter { border-radius: 8px; }
+  .project-filter { grid-template-columns: repeat(3, minmax(0, 1fr)); border-radius: 8px; }
   .filter-button, .text-link, .project-link { min-height: 44px; }
   .text-link, .project-link { display: inline-flex; align-items: center; }
   .hero-copy, .project-copy, .project-title-row > div { min-width: 0; }
