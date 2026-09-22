@@ -9,15 +9,16 @@
   <meta property="og:description" content="A focused RSS reader for trusted sources, offline reading and iPhone widgets.">
   <meta property="og:image" content="../../AppIcons/NF.png">
   <title>NewsFeeder · Focused RSS Reader for iPhone</title>
-  <link rel="stylesheet" href="../app-shell.css?v=20260615-mobile-safe-area-v2">
   <link rel="stylesheet" href="stylesheet.css?v=20260703-mobile-scale">
   <link rel="stylesheet" href="../../css/motion.css?v=20260629-calm-motion">
+  <link rel="stylesheet" href="../product-story.css?v=20260922-apple-product-story">
+  <link rel="stylesheet" href="../app-shell.css?v=20260922-apple-local-nav">
   <link rel="apple-touch-icon" href="../../AppIcons/NF.png">
   <link rel="icon" type="image/png" href="../../AppIcons/NF.png">
   <script src="newsfeeder.js?v=20260614" defer></script>
   <script src="../../js/motion.js?v=20260629-calm-motion" defer></script>
 </head>
-<body>
+<body class="product-page nf-product">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="app-header">
@@ -115,15 +116,15 @@
     </section>
 
     <section class="feature feature--summary" id="understand">
-      <div class="media-placeholder media-placeholder-phone reveal">
-        <span>Screenshot placeholder</span>
-        <strong>On-device article summary</strong>
-        <small>Replace with the real summary sheet on a supported device</small>
-      </div>
       <div class="section-copy reveal">
         <p class="eyebrow">Understand</p>
         <h2>Turn long articles into a quick on-device briefing.</h2>
         <p>On supported devices, Apple Foundation Models can create a concise summary without sending the article to a custom AI backend. Use it as orientation, then return to the full story.</p>
+      </div>
+      <div class="product-poster reveal" aria-label="On-device summary feature">
+        <span class="eyebrow">Optional · supported devices</span>
+        <strong>Private context, generated on device.</strong>
+        <p>The original article remains the source. The summary is a fast way back into the subject, not a replacement for reading it.</p>
       </div>
     </section>
 
@@ -133,10 +134,11 @@
         <h2>The next article is already waiting.</h2>
         <p>Place NewsFeeder on the iPhone Home Screen or Lock Screen and open the latest story directly. Choose the amount of context that fits your layout.</p>
       </div>
-      <div class="media-placeholder media-placeholder-wide reveal">
-        <span>Screenshot placeholder</span>
-        <strong>Home and Lock Screen widget family</strong>
-        <small>Replace with one real composite showing Small, Medium, Large and Lock Screen widgets</small>
+      <div class="story-rail widget-story reveal" aria-label="NewsFeeder widget formats">
+        <article class="story-card"><span>Small</span><h3>One story, ready.</h3><p>A direct route into the newest article from a chosen feed or filter.</p></article>
+        <article class="story-card"><span>Medium</span><h3>More context at a glance.</h3><p>Headlines and source color make the next read recognizable before opening the app.</p></article>
+        <article class="story-card"><span>Large</span><h3>Your feed on the Home Screen.</h3><p>More stories, the same chronological order, and deep links into the selected article.</p></article>
+        <article class="story-card"><span>Lock Screen</span><h3>A quiet reading shortcut.</h3><p>Keep a selected feed or filter close without adding another noisy notification.</p></article>
       </div>
     </section>
 

@@ -193,9 +193,10 @@
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
     }
   </style>
-  <link rel="stylesheet" href="../app-shell.css?v=20260615-mobile-safe-area-v2">
+  <link rel="stylesheet" href="../app-shell.css?v=20260922-apple-local-nav">
+  <link rel="stylesheet" href="../product-story.css?v=20260922-apple-product-story">
 </head>
-<body>
+<body class="product-page wb-product">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="app-header">
     <a class="app-brand" href="#top"><img src="../../AppIcons/Wetterblatt-current.png" alt=""><span>Wetterblatt</span></a>
@@ -231,10 +232,10 @@
           <h2>Understand the moment before reading every metric.</h2>
           <p>The latest local snapshot appears immediately, then refreshes in the background. Current conditions, hourly changes and a ten-day comparison remain connected to the location’s real local time.</p>
         </div>
-        <div class="placeholder">
-          <span>Screenshot placeholder</span>
-          <strong>Home forecast</strong>
-          <small>Replace with a real sunny, rain or night home screen · portrait</small>
+        <div class="product-poster weather-poster">
+          <span class="weather-mark">Cache first · refresh second</span>
+          <strong>The last useful forecast appears immediately.</strong>
+          <p>Fresh data replaces it quietly in the background. Until then, Wetterblatt shows exactly when the visible snapshot was updated.</p>
         </div>
       </div>
     </section>
@@ -248,20 +249,21 @@
           <article class="feature-card"><span>02</span><h3>Day guidance</h3><p>Wind, UV, air quality and pollen are paired with concise context instead of standing alone as raw numbers.</p></article>
           <article class="feature-card"><span>03</span><h3>Honest freshness</h3><p>Cached forecasts remain available offline and are clearly marked with their actual update time.</p></article>
         </div>
-        <div class="placeholder placeholder-wide" style="margin-top: 16px;">
-          <span>Screenshot placeholder</span>
-          <strong>Nowcast, air quality and pollen</strong>
-          <small>Replace with a real composite or one focused app screen</small>
+        <div class="story-rail weather-story">
+          <article class="story-card"><span>Rain</span><h3>When, how much, how long.</h3><p>A short-term nowcast puts probability and amount into a usable timeline.</p></article>
+          <article class="story-card"><span>Wind &amp; UV</span><h3>Conditions with a consequence.</h3><p>Relevant context explains what the values mean for the day ahead.</p></article>
+          <article class="story-card"><span>Air</span><h3>Air quality in plain language.</h3><p>The important signal stays visible without turning the page into a wall of measurements.</p></article>
+          <article class="story-card"><span>Pollen</span><h3>Seasonal, regional, specific.</h3><p>Available pollen types follow place and season instead of showing a generic score.</p></article>
         </div>
       </div>
     </section>
 
     <section id="widgets">
       <div class="shell split">
-        <div class="placeholder placeholder-wide">
-          <span>Screenshot placeholder</span>
-          <strong>Home and Lock Screen widgets</strong>
-          <small>Replace with a real widget family showing current, hourly, rain and week formats</small>
+        <div class="product-poster weather-poster">
+          <span class="weather-mark">Home &amp; Lock Screen</span>
+          <strong>Current. Hourly. Rain. Week.</strong>
+          <p>Each format reads from the same shared local snapshot and carries its freshness state with it.</p>
         </div>
         <div class="copy">
           <p class="eyebrow">Widgets</p>
@@ -279,6 +281,15 @@
         <div class="tech-list" aria-label="Technologies">
           <span>Swift 6</span><span>SwiftUI</span><span>Concurrency</span><span>Core Location</span><span>MapKit</span><span>WidgetKit</span><span>Open-Meteo</span>
         </div>
+      </div>
+    </section>
+
+    <section class="closing-weather">
+      <div class="shell">
+        <img src="../../AppIcons/Wetterblatt-current.png" alt="Wetterblatt app icon">
+        <p class="eyebrow">Wetterblatt for iPhone</p>
+        <h2>A forecast that remembers what time means.</h2>
+        <div class="actions" style="justify-content:center;"><span class="button">Coming soon</span></div>
       </div>
     </section>
   </main>

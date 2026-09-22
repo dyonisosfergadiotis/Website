@@ -1,0 +1,173 @@
+:root { --story-max: 1180px; --story-copy: 760px; }
+html { scroll-padding-top: 64px; }
+.product-page { overflow-x: hidden; }
+.product-page main { width: 100%; }
+.product-page section { position: relative; }
+.product-page .hero { overflow: hidden; }
+.product-page .hero-copy h1,
+.product-page .section-copy h2,
+.product-page .section-heading h2,
+.product-page .widgets-heading h2,
+.product-page .privacy-copy h2,
+.product-page .closing h2,
+.product-page .intro h2,
+.product-page .data-layout h2 { text-wrap: balance; }
+.product-page .hero-copy h1 { font-size: clamp(3.75rem, 8.2vw, 7.6rem); line-height: .92; letter-spacing: -.07em; }
+.product-page .hero-lede,
+.product-page .hero-copy > p:not(.eyebrow) { font-size: clamp(1.15rem, 1.8vw, 1.45rem); line-height: 1.45; }
+.product-page .eyebrow { font-size: .77rem; font-weight: 680; letter-spacing: 0; text-transform: none; }
+.product-page .button { min-height: 44px; padding: 10px 18px; border-radius: 999px; font-size: .9rem; font-weight: 620; }
+.product-page .story-rail,
+.product-page .capability-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.product-page .story-card {
+  min-height: 260px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: color-mix(in srgb, var(--surface, #fff) 88%, transparent);
+}
+.product-page .story-card span { color: var(--accent); font-size: .78rem; font-weight: 680; }
+.product-page .story-card h3 { margin: auto 0 10px; font-size: clamp(1.35rem, 2vw, 2rem); line-height: 1.05; }
+.product-page .story-card p { margin: 0; font-size: .92rem; line-height: 1.55; }
+.product-page .product-poster {
+  position: relative;
+  min-height: 420px;
+  padding: clamp(30px, 6vw, 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  background: var(--surface, #fff);
+}
+.product-page .product-poster::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: radial-gradient(circle at 78% 20%, color-mix(in srgb, var(--accent) 23%, transparent), transparent 40%);
+}
+.product-page .product-poster > * { position: relative; z-index: 1; }
+.product-page .product-poster strong { max-width: 720px; font-size: clamp(2.2rem, 5vw, 5rem); line-height: .98; letter-spacing: -.055em; }
+.product-page .product-poster p { max-width: 52ch; margin: 20px 0 0; font-size: 1rem; }
+.product-page .screen-shell,
+.product-page .device,
+.product-page .screen-detail { filter: drop-shadow(0 36px 70px rgba(0,0,0,.24)); }
+.product-page .screen-shell img,
+.product-page .device img,
+.product-page .screen-detail img { width: 100%; }
+
+.nf-product .hero {
+  min-height: min(900px, calc(100svh - 52px));
+  padding: 88px max(24px, calc((100vw - var(--story-max)) / 2)) 56px;
+  display: grid;
+  grid-template-columns: 1.05fr .72fr;
+  align-items: center;
+  gap: clamp(40px, 7vw, 100px);
+}
+.nf-product h1,
+.nf-product h2,
+.nf-product h3,
+.nf-product .product-poster strong { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif; }
+.nf-product .hero::after { position: absolute; inset: auto 0 0; height: 24%; content: ""; background: linear-gradient(transparent, var(--bg)); pointer-events: none; }
+.nf-product .hero-copy, .nf-product .hero-visual { position: relative; z-index: 2; }
+.nf-product .hero-visual { width: min(100%, 390px); justify-self: center; }
+.nf-product .feature,
+.nf-product .widgets,
+.nf-product .privacy,
+.nf-product .technology,
+.nf-product .closing { width: min(calc(100% - 48px), var(--story-max)); margin-inline: auto; }
+.nf-product .feature { padding-block: clamp(100px, 13vw, 180px); }
+.nf-product .feature--reader { border-radius: 44px; }
+.nf-product .feature--summary { grid-template-columns: 1fr; }
+.nf-product .feature--summary .section-copy { max-width: var(--story-copy); margin-inline: auto; text-align: center; }
+.nf-product .widgets { padding-block: clamp(110px, 13vw, 180px); }
+.nf-product .widgets-heading { max-width: var(--story-copy); }
+.nf-product .widget-story { margin-top: 48px; }
+.nf-product .privacy { padding-block: clamp(110px, 13vw, 180px); }
+.nf-product .technology { padding-block: clamp(90px, 11vw, 150px); }
+.nf-product .closing { padding-block: clamp(110px, 14vw, 190px); }
+
+.ps-product .hero {
+  min-height: min(900px, calc(100svh - 52px));
+  padding: 88px max(24px, calc((100vw - var(--story-max)) / 2)) 64px;
+  grid-template-columns: .96fr .78fr;
+}
+.ps-product .hero-copy, .ps-product .hero-stage { position: relative; z-index: 2; }
+.ps-product .hero-stage { width: min(100%, 520px); justify-self: end; }
+.ps-product .intro, .ps-product .section-shell { width: min(calc(100% - 48px), var(--story-max)); }
+.ps-product .feature-section,
+.ps-product .calendar-story,
+.ps-product .rules-section,
+.ps-product .insights-section,
+.ps-product .live-section,
+.ps-product .data-section,
+.ps-product .closing { padding-block: clamp(100px, 13vw, 180px); }
+.ps-product .calendar-layout { grid-template-columns: 1fr .72fr; align-items: center; }
+.ps-product .calendar-note { align-self: stretch; }
+.ps-product .live-grid { margin-top: 44px; }
+
+.wb-product .hero { min-height: min(920px, calc(100svh - 52px)); padding-block: 80px 56px; }
+.wb-product section { padding-block: clamp(100px, 13vw, 180px); }
+.wb-product main > section#top { padding-block: 0; }
+.wb-product .hero-celestial { position: relative; }
+.wb-product .hero-celestial::before { position: absolute; inset: 8% -14%; content: ""; border-radius: 50%; background: color-mix(in srgb, var(--accent) 13%, transparent); filter: blur(28px); }
+.wb-product .hero-icon { position: relative; }
+.wb-product .weather-poster { color: var(--ink); border: 1px solid var(--border); }
+.wb-product .weather-poster .weather-mark { color: var(--accent); font: 680 .76rem ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; }
+.wb-product .weather-story { margin-top: 44px; }
+.wb-product .feature-grid { grid-template-columns: repeat(3, 1fr); }
+.wb-product .feature-card { min-height: 260px; border-radius: 28px; }
+.wb-product .closing-weather { text-align: center; }
+.wb-product .closing-weather img { width: 108px; margin: 0 auto 28px; border-radius: 24px; }
+.wb-product .closing-weather h2 { margin-inline: auto; }
+
+@media (max-width: 900px) {
+  .product-page .story-rail, .product-page .capability-grid { grid-template-columns: repeat(2, 1fr); }
+  .nf-product .hero, .ps-product .hero { grid-template-columns: 1fr; }
+  .nf-product .hero-copy, .ps-product .hero-copy { max-width: 800px; }
+  .nf-product .hero-visual { width: min(64vw, 360px); }
+  .ps-product .hero-stage { justify-self: center; width: min(80vw, 520px); }
+  .ps-product .calendar-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .product-page .hero-copy h1 { font-size: 2.75rem; line-height: 1.06; letter-spacing: 0; overflow-wrap: anywhere; }
+  .product-page h2 { font-size: 2rem; line-height: 1.15; letter-spacing: 0; }
+  .product-page .hero-lede, .product-page .hero-copy > p:not(.eyebrow) { font-size: 1rem; line-height: 1.55; }
+  .product-page .hero-copy, .product-page .section-copy { min-width: 0; }
+  .product-page .story-rail, .product-page .capability-grid { grid-template-columns: 1fr; }
+  .product-page .story-card { min-height: 0; padding: 22px; gap: 18px; border-radius: 8px; }
+  .product-page .story-card h3 { font-size: 1.4rem; }
+  .product-page .product-poster { min-height: 260px; padding: 24px; border-radius: 8px; }
+  .product-page .product-poster strong { font-size: 2rem; line-height: 1.12; letter-spacing: 0; }
+  .nf-product .hero, .ps-product .hero { min-height: 0; padding: 36px 20px; gap: 28px; }
+  .nf-product .hero-visual { width: min(72%, 280px); }
+  .ps-product .hero-stage { width: min(100%, 380px); }
+  .nf-product .feature, .nf-product .widgets, .nf-product .privacy, .nf-product .technology, .nf-product .closing,
+  .ps-product .feature-section, .ps-product .calendar-story, .ps-product .rules-section, .ps-product .insights-section, .ps-product .live-section, .ps-product .data-section, .ps-product .closing,
+  .wb-product section { padding-block: 52px; }
+  .wb-product .hero { min-height: 0; height: auto; padding-block: 36px; gap: 28px; }
+  .wb-product .hero-celestial { width: min(55%, 210px); }
+  .wb-product .feature-card { min-height: 0; border-radius: 8px; }
+  .nf-product .feature,
+  .nf-product .widgets,
+  .nf-product .privacy,
+  .nf-product .technology,
+  .nf-product .closing,
+  .ps-product .intro,
+  .ps-product .section-shell { width: min(calc(100% - 32px), var(--story-max)); }
+  .wb-product .feature-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 360px) {
+  .product-page .hero-copy h1 { font-size: 2.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-page *, .product-page *::before, .product-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
