@@ -1,0 +1,54 @@
+:root { color-scheme: dark; }
+
+.skip-link { position: fixed; top: -80px; left: 16px; z-index: 1000; padding: 10px 14px; border-radius: 12px; color: #001b09; background: #20ca61; }
+.skip-link:focus { top: 12px; }
+
+.ts-product { margin: 0; color: #f5f5f7; background: #050806; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; }
+.ts-product .app-header { color: #f5f5f7; background: rgba(5, 8, 6, .78); border-color: rgba(255,255,255,.09); }
+.ts-product .app-brand, .ts-product .app-nav a, .ts-product .app-portfolio-link { color: inherit; }
+.ts-product .app-nav-toggle { color: inherit; border-color: rgba(255,255,255,.16); }
+.ts-product .eyebrow { color: #20ca61; }
+.ts-product .button-primary { color: #001b09; background: #20ca61; }
+.ts-product .button-secondary { color: #f5f5f7; border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.06); }
+
+.ts-hero { min-height: 92svh; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr); align-items: center; gap: clamp(36px, 7vw, 110px); max-width: 1320px; margin: 0 auto; padding: clamp(130px, 14vw, 190px) clamp(24px, 6vw, 88px) 90px; overflow: hidden; }
+.ts-hero h1 { margin: 16px 0 26px; font-size: clamp(4rem, 7.4vw, 7.4rem); line-height: .91; letter-spacing: -.075em; }
+.ts-hero h1 span { color: #20ca61; }
+.ts-hero-copy > p:not(.eyebrow) { max-width: 620px; color: #a1a1a6; font-size: clamp(1.12rem, 1.8vw, 1.42rem); line-height: 1.55; }
+.ts-platforms { display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0 0; padding: 0; list-style: none; }
+.ts-platforms li, .ts-device-list span { padding: 10px 14px; border: 1px solid rgba(255,255,255,.11); border-radius: 999px; color: #c7c7cc; background: rgba(255,255,255,.05); }
+.ts-hero-screen { position: relative; display: grid; place-items: center; min-height: 680px; }
+.ts-hero-screen::before { position: absolute; width: 560px; height: 560px; content: ""; border-radius: 50%; background: rgba(20, 220, 91, .23); filter: blur(90px); }
+.ts-phone-frame { position: relative; width: min(390px, 82vw); height: 690px; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 52px; background: #080808; box-shadow: 0 55px 120px rgba(0,0,0,.7); transform: rotate(2.5deg); }
+.ts-phone-frame img { width: 100%; height: calc(100% + 44px); object-fit: cover; object-position: top; transform: translateY(-44px); }
+
+.ts-statement { max-width: 1080px; margin: 0 auto; padding: clamp(100px, 14vw, 190px) 24px; text-align: center; }
+.ts-statement h2, .ts-device-copy h2 { margin: 14px 0 22px; font-size: clamp(3rem, 6vw, 6rem); line-height: .96; letter-spacing: -.055em; }
+.ts-statement > p:last-child, .ts-device-copy > p:last-child { max-width: 760px; margin-inline: auto; color: #a1a1a6; font-size: 1.2rem; line-height: 1.65; }
+.ts-feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1240px; margin: 0 auto; padding: 0 24px 150px; }
+.ts-feature-card { min-height: 320px; padding: 34px; border: 1px solid rgba(255,255,255,.08); border-radius: 34px; background: #101211; }
+.ts-feature-card > span { color: #20ca61; font-weight: 750; }
+.ts-feature-card h3 { margin: 70px 0 12px; font-size: 2rem; }
+.ts-feature-card p { color: #a1a1a6; line-height: 1.6; }
+.ts-devices { display: grid; grid-template-columns: 1.2fr .8fr; gap: 80px; align-items: center; padding: clamp(90px, 12vw, 160px) max(24px, calc((100vw - 1200px) / 2)); background: #0c170f; }
+.ts-device-list { display: flex; flex-wrap: wrap; gap: 12px; align-content: center; }
+.ts-product .closing { background: #050806; }
+.ts-product .app-footer { color: #86868b; background: #050806; border-color: rgba(255,255,255,.08); }
+.ts-product .app-footer a { color: #d1d1d6; }
+
+@media (max-width: 850px) {
+  .ts-product .app-nav { background: rgba(5,8,6,.98); }
+  .ts-hero { grid-template-columns: 1fr; padding-top: 120px; text-align: center; }
+  .ts-hero-copy > p, .ts-platforms, .ts-hero .hero-actions { justify-content: center; margin-inline: auto; }
+  .ts-feature-grid { grid-template-columns: 1fr; }
+  .ts-devices { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 560px) {
+  .ts-hero { padding-inline: 18px; }
+  .ts-hero h1 { font-size: 3.15rem; letter-spacing: -.05em; }
+  .ts-hero-screen { min-height: 570px; }
+  .ts-phone-frame { height: 560px; border-radius: 38px; }
+  .ts-feature-card { min-height: 260px; border-radius: 26px; }
+  .ts-feature-card h3 { margin-top: 44px; }
+}
